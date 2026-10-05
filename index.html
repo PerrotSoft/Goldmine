@@ -208,17 +208,6 @@ textarea{width:100%;height:70px;background:#0007;color:var(--txt);border:3px sol
 <script>
 (()=>{
 'use strict';
-/* ====================================================================
-   НАСТРОЙКИ ДЛЯ ПОРТИРОВАНИЯ (AdMob, покупки)
-   В мобильной обёртке задайте window.GoldRushBridge ДО загрузки скрипта:
-     showRewardedAd(placement, cb)  -> cb(true) если награда получена
-     showInterstitial()
-     purchase(sku, cb)              -> cb(true) после успешной покупки
-   Для релиза поставьте GR.testMode=false.
-   ==================================================================== */
-const GR={testMode:true,interstitialEvery:5,
-  packs:[{id:'gems_100',gems:100,price:'$0.99'},{id:'gems_550',gems:550,price:'$4.99'},{id:'gems_1200',gems:1200,price:'$9.99'}]};
-
 const $=id=>document.getElementById(id);
 const rnd=(a,b)=>a+Math.random()*(b-a);
 const ri=(a,b)=>Math.floor(rnd(a,b+1));
@@ -529,7 +518,7 @@ const ACH=[
 const KEY='gold_rush_mc_v1';
 const defaults=()=>{const d={coins:0,ore:0,coal:0,ingot:0,diamond:0,gblock:0,apple:0,iron:0,ironIng:0,redstone:0,emerald:0,gear:0,circuit:0,eApple:0,pHaste:0,pLuck:0,pTime:0,abTnt:0,abRage:0,abFreeze:0,gems:0,
   xp:0,level:1,pick:0,sharp:0,time:0,spawn:0,luck:0,helpers:0,cart:0,slots:0,smeltSpd:0,trade:0,tntShield:0,cool:0,queue:0,prog:0,qI:0,progI:0,cartAcc:0,
-  stars:0,rebirths:0,runCoins:0,sound:true,loc:'forest',locProg:{},locDone:{},locUnl:{forest:1},won:0,tree:{},gp:{},merch:0,merchProfit:0,autoM:0,autoT:0,adCnt:0,
+  stars:0,rebirths:0,runCoins:0,sound:true,loc:'forest',locProg:{},locDone:{},locUnl:{forest:1},won:0,tree:{},gp:{},merch:0,merchProfit:0,autoM:0,autoT:0,
   stats:{blocks:0,rounds:0,tnt:0,defused:0,coinsEarned:0,best:0,maxCombo:0,ingots:0,sold:0,diaGot:0,apples:0,chests:0,crafted:0},ach:{},mk:null,last:Date.now()};
   NEWITEMS.forEach(k=>d[k]=0);return d};
 function load(){const d=defaults();try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);Object.assign(d,o);d.stats=Object.assign(defaults().stats,o.stats||{});d.ach=o.ach||{};d.locUnl=Object.assign({forest:1},o.locUnl||{})}}catch(e){}return d}
@@ -561,9 +550,6 @@ const autoEff=()=>autoEffFor(S.autoM)+tv('autoEff')+.15*gp('gm_auto');
 const isHaz=t=>t==='tnt'||t==='gTnt'||t==='rTnt'||t==='pTnt';
 const curLoc=()=>LM[S.loc];
 function addCoins(n){S.coins+=n;S.stats.coinsEarned+=n;S.runCoins+=n}
-const bridge=()=>window.GoldRushBridge||defaultBridge;
-function fakeAd(cb){toast('Реклама (тест)… 2 с','star');setTimeout(()=>cb(true),2000)}
-const defaultBridge={showRewardedAd:(p,cb)=>GR.testMode?fakeAd(cb):cb(false),showInterstitial:()=>{},purchase:(sku,cb)=>GR.testMode?cb(true):cb(false)};
 
 /* ================= ЗВУК ================= */
 let AC=null;
@@ -700,16 +686,13 @@ function startRound(){ac();let fever=1,haste=false,luckP=false,extra=0;
   R={total:tt,t:tt,blocks:[],spawnT:.05,combo:0,comboT:0,maxCombo:0,hAcc:0,fever,haste,luckP,rageT:0,freezeT:0,cd:{abTnt:0,abRage:0,abFreeze:0},got:{ore:0,coal:0,coins:0,diamond:0,blocks:0,xp:0,extra:{}}};
   $('blocks').innerHTML='';$('fx').innerHTML='';$('overlay').classList.add('hidden');sfx.start();gkey=''}
 function endRound(){const g=R.got,mc=R.maxCombo,fv=R.fever;R=null;$('blocks').innerHTML='';S.stats.rounds++;S.stats.best=Math.max(S.stats.best,g.blocks);sfx.end();checkAch();save();lastG=g;
-  S.adCnt++;if(S.adCnt%GR.interstitialEvery===0){try{bridge().showInterstitial()}catch(e){}}
   showResult(g,mc,fv);buildMineInfo();buildLocInfo()}
 function showStart(){const ov=$('overlay');ov.classList.remove('hidden');
   ov.innerHTML=`<div class="ovp"><h2>${curLoc().n}</h2><p>Раунд ${roundTime()} с. Бей блоки, пока они не исчезли. Комбо повышает награду!</p><p>Бомбы: <b style="color:#ffb06a">TNT</b> не бей, <b style="color:#7fe05a">зелёный</b> не трогай, <b style="color:#ff6a6a">красный</b> и <b style="color:#c89aff">фиолетовый</b> обезвреживай. Часы дают время.</p>${consList()}<button class="btn gold big-btn" id="goBtn">НАЧАТЬ РАУНД</button></div>`;$('goBtn').onclick=startRound}
 function showResult(g,mc,fv){const ov=$('overlay');ov.classList.remove('hidden');
   const ex=Object.keys(g.extra).map(k=>`<div>${img(ITEM[k][1])}+${fmt(g.extra[k])}</div>`).join('');
-  ov.innerHTML=`<div class="ovp"><h2>Раунд окончен!</h2>${fv>1?`<p style="color:#ffd93b;font-weight:800">Добыча ×${fv}</p>`:''}<div class="got"><div>${img('b_gold')}${g.blocks} блоков</div><div>${img('coin')}+${fmt(g.coins)}</div><div>${img('ore')}+${fmt(g.ore)}</div><div>${img('coal')}+${fmt(g.coal)}</div><div>${img('diamond')}+${g.diamond}</div><div>${img('star')}комбо ${mc}</div>${ex}</div>${consList()}<button class="btn gold big-btn" id="goBtn">ЕЩЁ РАУНД</button><div class="mt col"><button class="btn em" id="adBtn">Реклама: ×2 награда раунда</button><button class="btn blue" id="toFurn">В печь и на верстак</button></div></div>`;
-  $('goBtn').onclick=startRound;$('toFurn').onclick=()=>setTab('furnace');$('adBtn').onclick=watchDouble}
-function watchDouble(){if(!lastG||lastG.done)return;bridge().showRewardedAd('double_reward',ok=>{if(!ok){toast('Реклама недоступна');return}const g=lastG;if(g.done)return;g.done=true;
-  for(const k of ['ore','coal','diamond'])S[k]+=g[k];for(const k in g.extra)S[k]+=g.extra[k];addCoins(g.coins);toast('Награда раунда удвоена!','coin');sfx.coin();const b=$('adBtn');if(b)b.classList.add('hidden')})}
+  ov.innerHTML=`<div class="ovp"><h2>Раунд окончен!</h2>${fv>1?`<p style="color:#ffd93b;font-weight:800">Добыча ×${fv}</p>`:''}<div class="got"><div>${img('b_gold')}${g.blocks} блоков</div><div>${img('coin')}+${fmt(g.coins)}</div><div>${img('ore')}+${fmt(g.ore)}</div><div>${img('coal')}+${fmt(g.coal)}</div><div>${img('diamond')}+${g.diamond}</div><div>${img('star')}комбо ${mc}</div>${ex}</div>${consList()}<button class="btn gold big-btn" id="goBtn">ЕЩЁ РАУНД</button><div class="mt col"><button class="btn blue" id="toFurn">В печь и на верстак</button></div></div>`;
+  $('goBtn').onclick=startRound;$('toFurn').onclick=()=>setTab('furnace')}
 $('overlay').addEventListener('change',e=>{const c=e.target.closest('[data-use]');if(c)useSel[c.dataset.use]=c.checked});
 $('blocks').addEventListener('pointerdown',e=>{const el=e.target.closest('.blk');if(!el||!R||tab!=='mine')return;e.preventDefault();ac();const b=el._b;if(!b||b.dead)return;const rc=$('blocks').getBoundingClientRect();hitBlock(b,curDmg(),{px:e.clientX-rc.left,py:e.clientY-rc.top,player:true})});
 $('abil').addEventListener('pointerdown',e=>{const b=e.target.closest('[data-ab]');if(!b||!R||tab!=='mine')return;e.preventDefault();ac();useAbility(b.dataset.ab)});
@@ -855,10 +838,8 @@ $('tab-tree').addEventListener('click',e=>{const b=e.target.closest('[data-a="tn
 const GEM_RATE=1500;
 function buildProg(){const st=S.stats;
   const rows=[['Сломано блоков',fmt(st.blocks)],['Раундов сыграно',st.rounds],['Лучший раунд (блоков)',st.best],['Максимальное комбо',st.maxCombo],['Слитков выплавлено',fmt(st.ingots)],['Предметов создано',st.crafted],['Сундуков открыто',st.chests],['Подорвано TNT',st.tnt],['Обезврежено бомб',st.defused],['Монет заработано',fmt(st.coinsEarned)],['Товаров продано',fmt(st.sold)]];
-  let h=`<div class="card"><h3>Изумруды</h3><div class="row" style="padding-top:0">${img('gem','ic')}<div class="tx"><b>У вас: ${fmt(S.gems)}</b><small>Изумруды нельзя добыть в шахте. Их дают покупки и перекрутка.</small></div></div>
-  <div class="btnrow mt" style="grid-template-columns:1fr 1fr"><button class="btn gold" data-a="gemcoin" data-n="1" ${S.gems>=1?'':'disabled'}>1 → ${fmt(GEM_RATE)} монет</button><button class="btn gold" data-a="gemcoin" data-n="10" ${S.gems>=10?'':'disabled'}>10 → ${fmt(GEM_RATE*10)} монет</button></div>
-  <div class="small dim mt">Купить изумруды${GR.testMode?' (тестовый режим: покупка бесплатна)':''}:</div>
-  <div class="btnrow mt">${GR.packs.map(p=>`<button class="btn em" data-a="pack" data-id="${p.id}">${p.gems}<br><small>${p.price}</small></button>`).join('')}</div></div>`;
+  let h=`<div class="card"><h3>Изумруды</h3><div class="row" style="padding-top:0">${img('gem','ic')}<div class="tx"><b>У вас: ${fmt(S.gems)}</b><small>Изумруды нельзя добыть в шахте. Их дают только перекрутка.</small></div></div>
+  <div class="btnrow mt" style="grid-template-columns:1fr 1fr"><button class="btn gold" data-a="gemcoin" data-n="1" ${S.gems>=1?'':'disabled'}>1 → ${fmt(GEM_RATE)} монет</button><button class="btn gold" data-a="gemcoin" data-n="10" ${S.gems>=10?'':'disabled'}>10 → ${fmt(GEM_RATE*10)} монет</button></div></div>`;
   h+='<div class="card"><h3>Изумрудная лавка</h3>'+GEMPERK.map(u=>{const l=gp(u.id),c=u.cost(l),pips=Array.from({length:u.max},(_,k)=>`<i class="${k<l?'on':''}"></i>`).join('');
     return `<div class="row">${img(u.ic,'ic')}<div class="tx"><b>${u.n}</b><small>${u.ds(l)}</small><div class="pips">${pips}</div></div>${l>=u.max?'<span class="tag">МАКС</span>':`<button class="btn em" data-a="gperk" data-id="${u.id}" ${S.gems>=c?'':'disabled'}><img src="${ICON.gem}" alt="">${c}</button>`}</div>`}).join('')+'</div>';
   h+=`<div class="card"><h3>Перекрутка</h3><div class="row" style="padding-top:0">${img('star','ic')}<div class="tx"><b>Звёзд: ${S.stars} (+${S.stars*10}% добычи) • перекруток: ${S.rebirths}</b><small>${S.won?'Игра пройдена! Перекрутка сбросит шахту, кирки, улучшения, навыки, локации и ресурсы. Достижения, статистика и изумруды остаются.':'Откроется после прохождения Энда (последней локации): '+Math.min(S.locProg.end||0,800)+'/800 блоков там.'}</small></div></div>
@@ -869,7 +850,7 @@ function buildProg(){const st=S.stats;
   $('tab-prog').innerHTML=h}
 function rebirth(kind){if(!S.won){toast('Сначала пройдите Энд');return}
   if(!confirm('Перекрутка: шахта, кирки, улучшения, навыки, локации и ресурсы сбросятся. Взамен: '+(kind==='gems'?'10 изумрудов':'одна перекрут-монета (★ +10% добычи навсегда)')+'. Продолжить?'))return;
-  const d=defaults();d.stats=S.stats;d.ach=S.ach;d.sound=S.sound;d.mk=S.mk;d.gems=S.gems+(kind==='gems'?10:0);d.gp=S.gp;d.stars=S.stars+(kind==='gems'?0:1);d.rebirths=S.rebirths+1;d.coins=100*d.stars;d.adCnt=S.adCnt;
+  const d=defaults();d.stats=S.stats;d.ach=S.ach;d.sound=S.sound;d.mk=S.mk;d.gems=S.gems+(kind==='gems'?10:0);d.gp=S.gp;d.stars=S.stars+(kind==='gems'?0:1);d.rebirths=S.rebirths+1;d.coins=100*d.stars;
   noSave=true;try{localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}location.reload()}
 function setSound(){$('sndBtn').textContent=S.sound?'♪ ВКЛ':'♪ ВЫКЛ'}
 $('sndBtn').onclick=()=>{S.sound=!S.sound;setSound();if(S.sound){ac();sfx.buy()}if(tab==='prog')buildProg();save()};
@@ -878,7 +859,6 @@ $('tab-prog').addEventListener('click',e=>{const b=e.target.closest('[data-a]');
   else if(a==='rebirth'){rebirth(b.dataset.kind)}
   else if(a==='gemcoin'){const n=+b.dataset.n;if(S.gems<n)return;S.gems-=n;addCoins(n*GEM_RATE);sfx.coin();toast('Обмен: +'+fmt(n*GEM_RATE)+' монет','coin');buildProg()}
   else if(a==='gperk'){const u=GEMPERK.find(x=>x.id===b.dataset.id),l=gp(u.id),c=u.cost(l);if(l>=u.max||S.gems<c)return;S.gems-=c;S.gp[u.id]=l+1;sfx.level();toast(u.n+': ур. '+(l+1),u.ic);buildProg();buildMineInfo();save()}
-  else if(a==='pack'){const p=GR.packs.find(x=>x.id===b.dataset.id);bridge().purchase(p.id,ok=>{if(!ok){toast('Покупки доступны в мобильной версии');return}S.gems+=p.gems;sfx.level();toast('+'+p.gems+' изумрудов','gem');save();if(tab==='prog')buildProg()})}
   else if(a==='exp'){save();let s='';try{s=btoa(unescape(encodeURIComponent(JSON.stringify(S))))}catch(x){}box.innerHTML='<textarea id="sv" readonly></textarea><div class="small dim">Скопируйте код и сохраните его.</div>';$('sv').value=s;$('sv').select()}
   else if(a==='imp'){box.innerHTML='<textarea id="sv" placeholder="Вставьте код сохранения"></textarea><button class="btn gold mt" data-a="doimp">Загрузить</button>'}
   else if(a==='doimp'){try{const o=JSON.parse(decodeURIComponent(escape(atob($('sv').value.trim()))));if(typeof o.coins!=='number')throw 0;localStorage.setItem(KEY,JSON.stringify(o));noSave=true;location.reload()}catch(x){toast('Неверный код сохранения')}}
