@@ -19,10 +19,10 @@ header{padding:8px 10px 7px;background:var(--p1);border-bottom:3px solid #000;bo
 .logo{display:flex;align-items:center;gap:8px;font-weight:900;letter-spacing:.5px;color:var(--gold);text-shadow:2px 2px 0 #000;font-size:15px}
 .logo img{width:24px;height:24px}
 .mini{background:var(--p2);border:3px solid #000;padding:2px 9px;font-size:12px;font-weight:700;box-shadow:inset -2px -2px 0 #0006,inset 2px 2px 0 #ffffff22}
-#res{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
-.chip{display:flex;align-items:center;gap:4px;background:#0006;border:2px solid #000;padding:3px 5px;min-width:0}
-.chip img{width:18px;height:18px;flex:none}
-.chip b{font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#res{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.chip{display:flex;align-items:center;gap:3px;background:#0006;border:2px solid #000;padding:3px 4px;min-width:0}
+.chip img{width:16px;height:16px;flex:none}
+.chip b{font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .chip.bump{animation:bump .25s}
 #lv{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:11px;color:var(--dim);font-weight:700}
 .bar{flex:1;height:10px;background:#000;border:2px solid #000;position:relative;overflow:hidden}
@@ -30,9 +30,9 @@ header{padding:8px 10px 7px;background:var(--p1);border-bottom:3px solid #000;bo
 .bar.big{height:16px;flex:none;width:100%}
 .bar.time i{background:linear-gradient(#ffe45a,#e0a81c)}
 main{flex:1;overflow-y:auto;overflow-x:hidden;padding:10px;-webkit-overflow-scrolling:touch}
-nav{display:grid;grid-template-columns:repeat(5,1fr);background:var(--p1);border-top:3px solid #000;padding-bottom:env(safe-area-inset-bottom)}
-nav button{background:none;border:0;padding:6px 2px 5px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11px;color:var(--dim);font-weight:700}
-nav button img{width:26px;height:26px;opacity:.65}
+nav{display:grid;grid-template-columns:repeat(6,1fr);background:var(--p1);border-top:3px solid #000;padding-bottom:env(safe-area-inset-bottom)}
+nav button{background:none;border:0;padding:6px 1px 5px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;color:var(--dim);font-weight:700}
+nav button img{width:24px;height:24px;opacity:.65}
 nav button.on{color:var(--gold);background:#ffffff0d;box-shadow:inset 0 3px 0 var(--gold)}
 nav button.on img{opacity:1}
 .card{background:var(--p1);border:3px solid #000;padding:9px;margin-bottom:9px;box-shadow:inset -3px -3px 0 #0005,inset 3px 3px 0 #ffffff14}
@@ -40,7 +40,7 @@ nav button.on img{opacity:1}
 .btn{background:var(--grn);border:3px solid #000;padding:7px 10px;font-weight:800;font-size:13px;box-shadow:inset -3px -3px 0 #0004,inset 3px 3px 0 #ffffff40;text-shadow:1px 1px 0 #0006;display:inline-flex;align-items:center;gap:5px;justify-content:center;color:#fff}
 .btn:active:not(:disabled){transform:translateY(2px)}
 .btn:disabled{background:#4a463e;color:#8b8472;cursor:not-allowed;box-shadow:inset -3px -3px 0 #0004,inset 3px 3px 0 #ffffff14;text-shadow:none}
-.btn.gold{background:#d9a21b}.btn.red{background:#c0392b}.btn.blue{background:#2f7fc4}
+.btn.gold{background:#d9a21b}.btn.red{background:#c0392b}.btn.blue{background:#2f7fc4}.btn.purple{background:#8a4fd0}.btn.em{background:#1f9a4a}
 .btn img{width:16px;height:16px}
 .big-btn{font-size:18px;padding:12px 22px;margin-top:8px}
 .btnrow{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
@@ -49,43 +49,63 @@ nav button.on img{opacity:1}
 #hud{background:var(--p1);border:3px solid #000;padding:8px 9px;box-shadow:inset -3px -3px 0 #0005,inset 3px 3px 0 #ffffff14}
 .hudrow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px}
 #tm{font-size:24px;font-weight:900;color:var(--gold);text-shadow:2px 2px 0 #000;font-variant-numeric:tabular-nums}
-#cmb{font-size:13px;font-weight:900;color:#8fe35a;text-shadow:1px 1px 0 #000}
+#cmb{font-size:13px;font-weight:900;color:#8fe35a;text-shadow:1px 1px 0 #000;text-align:right}
+#locline{font-size:11.5px;font-weight:800;color:var(--dim);margin-bottom:5px}
 #gotrow{display:flex;gap:6px;margin-top:6px;min-height:22px;flex-wrap:wrap;font-size:12px;font-weight:800}
 #gotrow span{display:flex;align-items:center;gap:3px;background:#0006;border:2px solid #000;padding:1px 6px}
 #gotrow img{width:15px;height:15px}
-#field{position:relative;height:clamp(300px,50vh,480px);border:4px solid #000;overflow:hidden;background-size:64px 64px;image-rendering:pixelated;box-shadow:inset 0 0 50px #0006;touch-action:none;margin:9px 0}
+#abil{display:flex;gap:6px;margin-top:7px}
+.abtn{flex:1;display:flex;align-items:center;gap:5px;background:#3a352d;border:3px solid #000;padding:4px 6px;font-size:11px;font-weight:800;box-shadow:inset -2px -2px 0 #0005,inset 2px 2px 0 #ffffff22;touch-action:manipulation;min-width:0}
+.abtn img{width:22px;height:22px;flex:none}
+.abtn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.abtn i{font-style:normal;margin-left:auto;color:var(--gold);font-size:10.5px}
+.abtn.cd{opacity:.5;filter:grayscale(.6)}
+#field{position:relative;height:clamp(300px,50vh,480px);border:4px solid #000;overflow:hidden;background-size:64px 64px;image-rendering:pixelated;box-shadow:inset 0 0 50px #0006;touch-action:none;margin:9px 0;contain:layout paint}
 #blocks,#fx,#deco{position:absolute;inset:0}
 #deco{pointer-events:none}
 #deco img{position:absolute;width:26px;height:26px;opacity:.95}
 #fx{pointer-events:none;z-index:5;overflow:hidden}
 #flash{position:absolute;inset:0;background:#ff5a2a;opacity:0;pointer-events:none;z-index:6}
-.blk{position:absolute;cursor:pointer;touch-action:none;animation:pop .18s ease-out}
-.blk .bimg,.blk .crack{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.blk .bimg{filter:drop-shadow(0 4px 0 #0007)}
-.blk .crack{display:none}
-.blk .lt{position:absolute;left:3px;right:3px;bottom:-8px;height:4px;background:#000a;pointer-events:none}
-.blk .lt i{display:block;height:100%;width:100%;background:#8fe35a}
+.blk{position:absolute;cursor:pointer;touch-action:none;animation:pop .18s ease-out;contain:layout style;will-change:transform}
+.bimg,.crack{position:absolute;inset:0;background-size:100% 100%;image-rendering:pixelated;pointer-events:none}
+.bimg{box-shadow:0 4px 0 #0007}
+.crack{display:none}.crack.on{display:block}
+.blk .lt{position:absolute;left:3px;right:3px;bottom:-8px;height:4px;background:#000a;pointer-events:none;overflow:hidden}
+.blk .lt i{display:block;height:100%;width:100%;background:#8fe35a;transform-origin:left center}
 .blk.hit{animation:hit .12s}
 .blk.breaking{animation:brk .2s forwards;pointer-events:none}
-.blk.tnt .bimg{animation:tntblink .5s steps(2) infinite}
+.blk.tnt .bimg,.blk.gTnt .bimg,.blk.pTnt .bimg{animation:tntblink .5s steps(2) infinite}
+.blk.rTnt .bimg{animation:tntblink .22s steps(2) infinite}
+.blk.rTnt .lt i,.blk.pTnt .lt i{background:#ff4a3a}
+.blk.chest .bimg{animation:chestglow 1s ease-in-out infinite alternate}
+.blk.clock .bimg{animation:chestglow .8s ease-in-out infinite alternate}
 .pt{position:absolute;pointer-events:none}
 .ft{position:absolute;pointer-events:none;font-weight:900;font-size:14px;text-shadow:2px 2px 0 #000,-1px -1px 0 #000,1px -1px 0 #000,-1px 1px 0 #000;display:flex;flex-direction:column;gap:1px;white-space:nowrap}
 .ft span{display:flex;align-items:center;gap:3px}
 .ft img{width:16px;height:16px}
 .ft.bad{color:#ff7d6a;font-size:20px}
 #overlay{position:absolute;inset:0;z-index:10;display:flex;align-items:center;justify-content:center;background:#000a;padding:10px}
-.ovp{background:var(--p1);border:4px solid #000;padding:14px;max-width:340px;width:100%;text-align:center;box-shadow:inset -4px -4px 0 #0005,inset 4px 4px 0 #ffffff18}
+.ovp{background:var(--p1);border:4px solid #000;padding:14px;max-width:340px;width:100%;max-height:100%;overflow:auto;text-align:center;box-shadow:inset -4px -4px 0 #0005,inset 4px 4px 0 #ffffff18}
 .ovp h2{margin:0 0 6px;color:var(--gold);text-shadow:2px 2px 0 #000;font-size:21px}
 .ovp p{margin:6px 0;font-size:12.5px;color:#d8cfb8;line-height:1.4}
-.chk{display:flex;align-items:center;gap:7px;justify-content:center;font-size:12.5px;font-weight:700;margin:9px 0 2px;color:var(--gold)}
-.chk input{width:18px;height:18px;accent-color:#d9a21b}
+.uselist{margin:8px 0;display:flex;flex-direction:column;gap:5px;text-align:left}
+.uselist label{display:flex;align-items:center;gap:7px;background:#0005;border:2px solid #000;padding:5px 7px;font-size:12px;font-weight:700}
+.uselist input{width:18px;height:18px;accent-color:#d9a21b;flex:none}
+.uselist img{width:22px;height:22px;flex:none}
+.uselist small{color:var(--dim);display:block;font-size:10.5px;font-weight:600}
 .got{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:10px 0}
 .got div{display:flex;align-items:center;gap:6px;background:#0006;border:2px solid #000;padding:5px 7px;font-weight:800;font-size:13px;text-align:left}
 .got img{width:20px;height:20px}
-.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
-.lg{display:flex;align-items:center;gap:7px;background:#0004;border:2px solid #000;padding:5px}
-.lg img{width:30px;height:30px;flex:none}
-.lg b{display:block;font-size:12px}.lg small{display:block;font-size:10.5px;color:var(--dim);line-height:1.25}
+.lgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:8px}
+.lg{display:flex;align-items:center;gap:7px;background:#0004;border:2px solid #000;padding:4px}
+.lg img{width:28px;height:28px;flex:none}
+.lg b{display:block;font-size:11.5px}.lg small{display:block;font-size:10px;color:var(--dim);line-height:1.25}
+.locrow{display:flex;align-items:center;gap:9px;padding:7px 0;border-top:2px solid #0004}
+.locrow:first-of-type{border-top:0}
+.locrow img{width:34px;height:34px;flex:none}
+.locrow .tx{flex:1;min-width:0}.locrow .tx b{display:block;font-size:13px}.locrow .tx small{display:block;font-size:11px;color:var(--dim)}
+.locrow .bar{height:8px;margin-top:4px}
+.locrow.cur{background:#ffd93b14}
 /* rows */
 .row{display:flex;align-items:center;gap:9px;padding:8px 0;border-top:2px solid #0004}
 .row:first-of-type{border-top:0}
@@ -98,6 +118,21 @@ nav button.on img{opacity:1}
 .tag.dim{color:var(--dim)}
 .pips{display:flex;gap:2px;margin-top:4px}.pips i{width:7px;height:7px;background:#000;border:1px solid #000}.pips i.on{background:var(--gold)}
 .row .btn{padding:6px 8px;font-size:12px;white-space:nowrap}
+.col{display:flex;flex-direction:column;gap:4px}
+.costs{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.ci{display:flex;align-items:center;gap:3px;background:#0006;border:2px solid #000;padding:1px 5px;font-size:11px;font-weight:800}
+.ci img{width:14px;height:14px}
+.ci.no{color:#ff7d6a}
+.invg{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.invg div{display:flex;align-items:center;gap:4px;background:#0006;border:2px solid #000;padding:3px 5px;font-size:12px;font-weight:800;min-width:0}
+.invg img{width:18px;height:18px;flex:none}
+/* tree */
+.node{display:flex;gap:9px;align-items:center;padding:8px;border:2px solid #000;background:#0004;margin-bottom:6px}
+.node.own{background:#24361a;border-color:#4fa82e}
+.node.lock{opacity:.5}
+.node img.ic{width:30px;height:30px;flex:none}
+.node .tx{flex:1;min-width:0}.node b{font-size:13px;display:block}.node small{display:block;font-size:11px;color:var(--dim);line-height:1.3}
+.node .btn{padding:6px 8px;font-size:12px}
 /* market */
 .mtop{display:flex;align-items:center;gap:9px}
 .mtop img.ic{width:34px;height:34px;flex:none}
@@ -125,7 +160,8 @@ textarea{width:100%;height:70px;background:#0007;color:var(--txt);border:3px sol
 @keyframes pop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
 @keyframes hit{0%{transform:scale(1)}40%{transform:scale(.86) rotate(-4deg)}100%{transform:scale(1)}}
 @keyframes brk{to{transform:scale(1.35);opacity:0}}
-@keyframes tntblink{50%{filter:brightness(1.9)}}
+@keyframes tntblink{50%{opacity:.55}}
+@keyframes chestglow{from{box-shadow:0 4px 0 #0007,0 0 0 #ffd93b}to{box-shadow:0 4px 0 #0007,0 0 12px #ffd93b}}
 @keyframes bump{50%{transform:scale(1.2)}}
 @keyframes flick{50%{transform:scale(1.08) translateY(-1px);filter:brightness(1.25)}}
 </style>
@@ -143,9 +179,11 @@ textarea{width:100%;height:70px;background:#0007;color:var(--txt);border:3px sol
   <main>
     <section id="tab-mine" class="tab">
       <div id="hud">
+        <div id="locline"></div>
         <div class="hudrow"><div id="tm">30.0</div><div id="cmb"></div></div>
         <div class="bar big time"><i id="tbar" style="width:100%"></i></div>
         <div id="gotrow"></div>
+        <div id="abil" class="hidden"></div>
       </div>
       <div id="field">
         <div id="deco"></div>
@@ -154,11 +192,13 @@ textarea{width:100%;height:70px;background:#0007;color:var(--txt);border:3px sol
         <div id="flash"></div>
         <div id="overlay"></div>
       </div>
+      <div class="card" id="locinfo"></div>
       <div class="card" id="mineinfo"></div>
     </section>
     <section id="tab-furnace" class="tab hidden"></section>
     <section id="tab-market" class="tab hidden"></section>
     <section id="tab-shop" class="tab hidden"></section>
+    <section id="tab-tree" class="tab hidden"></section>
     <section id="tab-prog" class="tab hidden"></section>
   </main>
   <nav id="nav"></nav>
@@ -168,11 +208,23 @@ textarea{width:100%;height:70px;background:#0007;color:var(--txt);border:3px sol
 <script>
 (()=>{
 'use strict';
+/* ====================================================================
+   НАСТРОЙКИ ДЛЯ ПОРТИРОВАНИЯ (AdMob, покупки)
+   В мобильной обёртке задайте window.GoldRushBridge ДО загрузки скрипта:
+     showRewardedAd(placement, cb)  -> cb(true) если награда получена
+     showInterstitial()
+     purchase(sku, cb)              -> cb(true) после успешной покупки
+   Для релиза поставьте GR.testMode=false.
+   ==================================================================== */
+const GR={testMode:true,interstitialEvery:5,
+  packs:[{id:'gems_100',gems:100,price:'$0.99'},{id:'gems_550',gems:550,price:'$4.99'},{id:'gems_1200',gems:1200,price:'$9.99'}]};
+
 const $=id=>document.getElementById(id);
 const rnd=(a,b)=>a+Math.random()*(b-a);
 const ri=(a,b)=>Math.floor(rnd(a,b+1));
 const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function shade(h,f){const n=parseInt(h.slice(1),16);const r=clamp(Math.round(((n>>16)&255)*f),0,255),g=clamp(Math.round(((n>>8)&255)*f),0,255),b=clamp(Math.round((n&255)*f),0,255);return '#'+((1<<24)|(r<<16)|(g<<8)|b).toString(16).slice(1)}
 
 /* ================= ПИКСЕЛЬ-АРТ (SVG) ================= */
 function grid(fn){const g=[];for(let y=0;y<16;y++){g[y]=[];for(let x=0;x<16;x++)g[y][x]=fn(x,y)||null}return g}
@@ -187,13 +239,32 @@ function texOre(seed,cols){const r=rng(seed),st=['#8b8b8b','#858585','#949494','
   const g=grid((x,y)=>{if(x===0||y===0)return '#a5a5a5';if(x===15||y===15)return '#5e5e5e';return st[Math.floor(r()*st.length)]});
   const spots=[[3,3],[9,2],[5,8],[11,9],[3,12],[10,12],[7,5]],sh=[[0,0],[1,0],[0,1],[1,1],[-1,0]];
   spots.forEach(([sx,sy])=>sh.forEach(([dx,dy])=>{if(r()<.85){const X=sx+dx,Y=sy+dy;if(X>0&&X<15&&Y>0&&Y<15)g[Y][X]=cols[Math.floor(r()*cols.length)]}}));return uri(g)}
-function texTNT(){const r=rng(3),T=["XXX",".X.",".X.",".X.",".X."],N=["X.X","XXX","XXX","X.X","X.X"],L=[T,N,T],xs=[2,6,10];
-  const g=grid((x,y)=>{if(x===0||x===15)return '#8c2414';if(y===0)return '#ee5a42';if(y===15)return '#9c2a18';
-    if(y===4||y===10)return '#bdb5a5';if(y>4&&y<10)return '#e8e0d0';return(x===3||x===8||x===12)?'#b52f1c':(r()<.12?'#c9371f':'#d6402b')});
-  L.forEach((gl,i)=>gl.forEach((row,yy)=>[...row].forEach((ch,xx)=>{if(ch==='X')g[5+yy][xs[i]+xx]='#2a2a2a'})));return uri(g)}
+const TNT_P={
+ tnt:{base:['#d9731f','#c9651a','#b85a16'],band:'#e8e0d0',bE:'#bdb5a5',text:'#2a2a2a',eD:'#8a4510',eL:'#f0953a'},
+ gTnt:{base:['#3fa535','#368f2d','#2c7a25'],band:'#e8e0d0',bE:'#b5c9ad',text:'#14320f',eD:'#1f5a1a',eL:'#6fd05f'},
+ rTnt:{base:['#d6202a','#c01822','#a8141c'],band:'#2a2a2a',bE:'#111111',text:'#ff4a4a',eD:'#6e0a10',eL:'#ff5a5a'},
+ pTnt:{base:['#8a3fd0','#7a35bc','#6a2ca8'],band:'#e8e0d0',bE:'#c8b8e0',text:'#2a1048',eD:'#43186e',eL:'#b07af0'}};
+function texTNT(p){const r=rng(3),T=["XXX",".X.",".X.",".X.",".X."],N=["X.X","XXX","XXX","X.X","X.X"],L=[T,N,T],xs=[2,6,10];
+  const g=grid((x,y)=>{if(x===0||x===15)return p.eD;if(y===0)return p.eL;if(y===15)return p.eD;
+    if(y===4||y===10)return p.bE;if(y>4&&y<10)return p.band;return(x===3||x===8||x===12)?p.base[2]:(r()<.12?p.base[1]:p.base[0])});
+  L.forEach((gl,i)=>gl.forEach((row,yy)=>[...row].forEach((ch,xx)=>{if(ch==='X')g[5+yy][xs[i]+xx]=p.text})));return uri(g)}
+function clockBlk(){return gen((x,y)=>{if(x===0||y===0||x===15||y===15)return '#8a5a08';if(x===1||y===1||x===14||y===14)return '#d9a21b';
+  if((x===7||x===8)&&y>=3&&y<=8)return '#222';if((y===7||y===8)&&x>=8&&x<=11)return '#222';
+  if((x===7||x===8)&&(y===2||y===13))return '#b07a0c';if((y===7||y===8)&&(x===2||x===13))return '#b07a0c';return '#f2ead0'})}
 function texGrass(){const r=rng(11);const g=grid(()=>{const v=r();return v<.55?'#5fa83a':v<.75?'#68b542':v<.9?'#559a33':'#4d8f2e'});
   for(let i=0;i<14;i++){const x=Math.floor(r()*16),y=Math.floor(r()*15);g[y][x]='#3f7a26';g[y+1][x]='#3f7a26'}
   for(let i=0;i<10;i++){g[Math.floor(r()*16)][Math.floor(r()*16)]='#7bc94f'}return uri(g)}
+function texBg(seed,cols,dot){const r=rng(seed);const g=grid(()=>cols[Math.floor(r()*cols.length)]);for(let i=0;i<9;i++){g[Math.floor(r()*16)][Math.floor(r()*16)]=dot}return uri(g)}
+function texBlk(seed,d){const r=rng(seed),B=d.b;
+  const g=grid((x,y)=>{let c=B[Math.floor(r()*B.length)];
+    if(d.s==='log'&&x%4===1)c=shade(B[0],.8);
+    if(d.s==='pumpkin'&&(x===3||x===8||x===12))c=shade(B[0],.82);
+    if(x===0||y===0)return shade(B[0],1.22);if(x===15||y===15)return shade(B[0],.7);return c});
+  const n=d.n||0;for(let i=0;i<n;i++){const X=1+Math.floor(r()*14),Y=1+Math.floor(r()*14);g[Y][X]=d.sp[Math.floor(r()*d.sp.length)]}
+  if(d.s==='cactus'){for(let y=2;y<14;y+=4)for(let x=2;x<14;x+=4)g[y][x]='#e8f0c0'}
+  if(d.s==='holes'){for(let i=0;i<5;i++){const X=1+Math.floor(r()*13),Y=1+Math.floor(r()*13);for(let a=0;a<2;a++)for(let b=0;b<2;b++)g[Y+a][X+b]=shade(B[0],.6)}}
+  if(d.s==='chorus'){for(let i=3;i<=12;i++){g[7][i]=d.sp[0];g[i][7]=d.sp[0]}g[7][7]=d.sp[1]}
+  return uri(g)}
 function texCrack(n){const r=rng(99),pts=[];
   for(let b=0;b<5;b++){let px=8,py=8,a=b*1.256+r()*.5;for(let s=0;s<9;s++){a+=(r()-.5)*.9;px+=Math.cos(a)*1.1;py+=Math.sin(a)*1.1;const X=Math.round(px),Y=Math.round(py);if(X<1||X>14||Y<1||Y>14)break;pts.push([X,Y])}}
   pts.sort((a,b)=>Math.hypot(a[0]-8,a[1]-8)-Math.hypot(b[0]-8,b[1]-8));
@@ -204,24 +275,60 @@ function texPick(c){return gen((x,y)=>{const r=Math.hypot(x-6,y-9);
 const gemTex=(L,M,D)=>gen((x,y)=>{const dx=Math.abs(x-7.5),dy=Math.abs(y-7.5),s=dx+dy;if(s>7)return null;if(s>6)return D;if(y<5.5&&dx<3)return L;if(s>5)return D;return x<7.5?(y<7.5?L:M):(y<7.5?M:D)});
 function coinTex(){return gen((x,y)=>{const d=Math.hypot(x-7.5,y-7.5);if(d>6.2)return null;if(d>5.2)return '#9a6a05';if(d>4.2)return '#e0a81c';
   if((x===7||x===8)&&y>=4&&y<=11)return '#b07a0c';if(x+y<11&&d>2)return '#fff27a';return '#f9d03f'})}
-function nuggetTex(){const r=rng(5);return gen((x,y)=>{const d=Math.hypot(x-7.5,y-8.2),n=r()*1.1;if(d>4.6+n*.6)return null;if(d>3.6)return '#9a6a05';return x+y<14?'#fff27a':'#f2c92a'})}
+function nuggetTex(seed,p){const r=rng(seed);return gen((x,y)=>{const d=Math.hypot(x-7.5,y-8.2),n=r()*1.1;if(d>4.6+n*.6)return null;if(d>3.6)return p[0];return x+y<14?p[1]:p[2]})}
 function lumpTex(){const r=rng(8);return gen((x,y)=>{const d=Math.hypot(x-7.5,y-8),n=r()*1.2;if(d>5.2+n*.5)return null;if(d>4.3)return '#0c0c0c';return(x+y<12&&r()<.5)?'#555':(r()<.2?'#3a3a3a':'#202020')})}
-function ingotTex(){return gen((x,y)=>{
-  if(y>=5&&y<=7){const x0=3+(7-y),x1=11+(7-y);if(x>=x0&&x<=x1)return(y===5||x===x0||x===x1)?'#fff6a8':'#ffe45a'}
-  if(y>=8&&y<=11&&x>=3&&x<=11)return y===11?'#b07a0c':(x===3?'#f2c92a':'#e0a81c');
-  if(y>=6&&y<=10&&x>=12&&x<=13)return(x-12)+(y-6)<=4&&y-6>=x-12?'#b9810a':null;
-  if(y===12&&x>=3&&x<=11)return '#7a5206';return null})}
-function appleTex(){return gen((x,y)=>{const d=Math.hypot(x-7.5,y-9);if(y>=2&&y<=3&&x>=8&&x<=10)return '#3fa535';if(x===7&&y>=3&&y<=4)return '#6e4a22';
-  if(d>5.6)return null;if(d>4.6)return '#b07a0c';if(x>=4&&x<=6&&y>=6&&y<=7)return '#fff8b0';return '#f6c92b'})}
+function dustTex(){const r=rng(13);return gen((x,y)=>{const d=Math.hypot(x-7.5,y-8.5),n=r();if(d>5+n*.8)return null;if(d>4)return '#8a1010';return(x+y<12&&r()<.5)?'#ff6a5a':(r()<.25?'#ff3a2a':'#d41f1f')})}
+const GOLDP={tl:'#fff6a8',tm:'#ffe45a',f:'#e0a81c',fl:'#f2c92a',fb:'#b07a0c',s:'#b9810a',sh:'#7a5206'};
+const IRONP={tl:'#ffffff',tm:'#e6e6e6',f:'#bdbdbd',fl:'#d0d0d0',fb:'#8a8a8a',s:'#9a9a9a',sh:'#5a5a5a'};
+function ingotTex(p){return gen((x,y)=>{
+  if(y>=5&&y<=7){const x0=3+(7-y),x1=11+(7-y);if(x>=x0&&x<=x1)return(y===5||x===x0||x===x1)?p.tl:p.tm}
+  if(y>=8&&y<=11&&x>=3&&x<=11)return y===11?p.fb:(x===3?p.fl:p.f);
+  if(y>=6&&y<=10&&x>=12&&x<=13)return(x-12)+(y-6)<=4&&y-6>=x-12?p.s:null;
+  if(y===12&&x>=3&&x<=11)return p.sh;return null})}
+function appleTex(c){return gen((x,y)=>{const d=Math.hypot(x-7.5,y-9);if(y>=2&&y<=3&&x>=8&&x<=10)return '#3fa535';if(x===7&&y>=3&&y<=4)return '#6e4a22';
+  if(d>5.6)return null;if(d>4.6)return c[1];if(x>=4&&x<=6&&y>=6&&y<=7)return c[2];return c[0]})}
+function gearTex(){return gen((x,y)=>{const dx=Math.abs(x-7.5),dy=Math.abs(y-7.5),d=Math.hypot(dx,dy);if(d<=2.4)return null;
+  if(d>7.8)return null;if(d>6){return(dx<1.7||dy<1.7||Math.abs(dx-dy)<1.2)?'#d0d0d0':null}
+  if(d>5)return '#7a7a7a';return x+y<12?'#b5b5b5':'#8d8d8d'})}
+function circuitTex(){return gen((x,y)=>{if(x===0||y===0||x===15||y===15)return '#1c5f28';
+  if((y===4&&x>2&&x<13)||(y===11&&x>2&&x<13)||(x===4&&y>3&&y<12)||(x===11&&y>3&&y<12))return '#f9d03f';
+  if((x===7||x===8)&&(y===7||y===8))return '#e02020';return '#2f8f3f'})}
+function clockTex(){return gen((x,y)=>{const d=Math.hypot(x-7.5,y-7.5);if(d>6.6)return null;if(d>5.6)return '#b07a0c';
+  if((x===7||x===8)&&y>=3&&y<=8)return '#222';if((y===7||y===8)&&x>=8&&x<=11)return '#222';return '#f2ead0'})}
+const POT=["................","......kkkk......","......kkkk......",".......gg.......",".......gg.......","......oggo......",".....occcco.....","....occCccco....","....occCccco....","....occCccco....","....occCccco....","....oooooooo...."];
+const potTex=(c,C)=>fromMap(POT,{k:'#a8793c',g:'#cfe8f0',o:'#2a3a44',c,C});
+const VPAL={s:'#c58f6a',B:'#5a3a22',G:'#2f8f3f',n:'#a8714e',r:'#7a5230',a:'#5e3d20'};
 const MAPS={
- villager:{rows:["................","....ssssssss....","...ssssssssss...","...BBBBBBBBBB...","...ssGssssGss...","...ssssnnssss...","...ssssnnssss...","...ssssnnssss...","....ssssssss....","...rrrrrrrrrr...","..rrrrrrrrrrrr..","..raaaaaaaaaar..","..raaaaaaaaaar..","..rrrrrrrrrrrr..","..rrrrrrrrrrrr..","...rrrrrrrrrr..."],pal:{s:'#c58f6a',B:'#5a3a22',G:'#2f8f3f',n:'#a8714e',r:'#7a5230',a:'#5e3d20'}},
+ villager:{rows:["................","....ssssssss....","...ssssssssss...","...BBBBBBBBBB...","...ssGssssGss...","...ssssnnssss...","...ssssnnssss...","...ssssnnssss...","....ssssssss....","...rrrrrrrrrr...","..rrrrrrrrrrrr..","..raaaaaaaaaar..","..raaaaaaaaaar..","..rrrrrrrrrrrr..","..rrrrrrrrrrrr..","...rrrrrrrrrr..."],pal:VPAL},
  torch:{rows:["................",".......yy.......","......oyyo......","......oyyo......",".......oo.......",".......BD.......",".......BD.......",".......BD.......",".......BD.......",".......BD.......",".......BD.......",".......BD.......",".......BD.......",".......BD.......",".......BD.......","................"],pal:{y:'#fff3a0',o:'#ff9a1f',B:'#a8793c',D:'#6e4a22'}},
  cart:{rows:["................","................","....yyyYyyy.....","...yYyyyyYyy....","..GGGGGGGGGGGG..","..GgggggggggGG..","..GgggggggggGG..","..GGGGGGGGGGGG..","...GGGGGGGGGG...","....kk....kk....","...kkkk..kkkk...","....kk....kk...."],pal:{y:'#f9d03f',Y:'#fff27a',G:'#9a9a9a',g:'#6e6e6e',k:'#222'}},
  fire:{rows:["................",".......r........","......rro.......","......rroo......",".....rrooo.r....",".....rroyoor....","....rrooyyoor...","....rooyyyyor...","....rooyyyyoor..","....rooyyyyor...",".....roooyoor...",".....rrooooor...","......rrrrrr...."],pal:{r:'#d9381e',o:'#ff9a1f',y:'#fff3a0'}},
  furnace:{rows:["GGGGGGGGGGGGGGGG","GgGGgGGGGgGGGgGG","GGGgGGGgGGGGgGGG","GGGGGGGGGGGGGGGG","GGhhhhhhhhhhhhGG","GGhkkkkkkkkkkhGG","GGhkkkkkkkkkkhGG","GGhkkkkkkkkkkhGG","GGhkkkkkkkkkkhGG","GGhkkkkkkkkkkhGG","GGhhhhhhhhhhhhGG","GGGGGGGGGGGGGGGG","GgGGGGgGGGGgGGGG","GGGGgGGGGGGGgGGG","GGGGGGGGGGGGGGGG","gggggggggggggggg"],pal:{G:'#8f8f8f',g:'#6c6c6c',h:'#5a5a5a',k:'#1a1a1a'}},
  star:{rows:["................","................",".......yy.......",".......yy.......","......yyyy......","..yyyyyyyyyyyy..","...yyyyyyyyyy...","....yyyyyyyy....",".....yyyyyy.....","....yyyyyyyy....","....yyy..yyy....","...yyy....yyy..."],pal:{y:'#ffd93b'}},
+ b_chest:{rows:["................","..DDDDDDDDDDDD..",".DLLLLLLLLLLLLD.",".DLWWWWWWWWWWLD.",".DLWWWWWWWWWWLD.",".DDDDDDDDDDDDDD.",".DBBBBBGGBBBBBD.",".DLWWWWGGWWWWLD.",".DLWWWWBBWWWWLD.",".DLWWWWWWWWWWLD.",".DLWWWWWWWWWWLD.",".DDDDDDDDDDDDDD.","................"],pal:{D:'#6e4a22',L:'#c49a5a',W:'#a8793c',G:'#f9d03f',B:'#222'}},
  flower:{rows:["................","................","................","................",".......pp.......","......pppp......",".....ppyypp.....","......pppp......",".......pp.......",".......gg.......","......ggg.......",".......gg.......",".....g.gg.g.....","......gggg......",".......gg......."],pal:null}
 };
+/* блоки локаций */
+const BLK={
+ leaves:{b:['#2f7d2a','#3a9433','#266a22','#44a63c'],sp:['#1d5a1a'],n:9},
+ dirt:{b:['#7a5230','#6b4626','#86593a'],sp:['#5a3a20','#9a6a44'],n:10},
+ log:{b:['#6b4a28','#7a5530','#5e3f20'],sp:['#a8793c'],n:4,s:'log'},
+ pumpkin:{b:['#e8821a','#f0922a','#d0720f'],sp:['#a85a0a'],n:3,s:'pumpkin'},
+ ice:{b:['#a8d8f0','#b8e4f8','#98c8e8'],sp:['#e8f8ff'],n:8},
+ snow:{b:['#f4f8ff','#e8f0fa','#fafcff'],sp:['#cfdcec'],n:6},
+ sand:{b:['#e8d8a0','#dcca90','#f0e0b0'],sp:['#c9b678'],n:6},
+ cactus:{b:['#2f8f3f','#3aa04a','#27783a'],sp:['#1c5f28'],n:3,s:'cactus'},
+ sandstone:{b:['#d8c488','#cdb87a','#e0cc94'],sp:['#b8a468'],n:8},
+ deepslate:{b:['#4a4a52','#3f3f47','#55555e'],sp:['#2c2c33'],n:8},
+ prism:{b:['#4fb8a8','#5fc8b8','#3fa898'],sp:['#a0f0e0','#2f8878'],n:9},
+ sponge:{b:['#d8c850','#e0d060','#c8b840'],sp:['#a89830'],n:2,s:'holes'},
+ coral:{b:['#e0507a','#d04068','#f0608a'],sp:['#a02848'],n:8},
+ quartz:{b:['#f0ece4','#e6e0d6','#faf6ee'],sp:['#d8d0c0'],n:5},
+ glow:{b:['#f0c860','#f8d878','#e0b448'],sp:['#fff0b0','#c8963a'],n:12},
+ nrack:{b:['#7a2a2a','#6a2020','#8a3434'],sp:['#4a1414','#a04848'],n:10},
+ obs:{b:['#1a1028','#241638','#120a1e'],sp:['#5a3a8a','#3a2460'],n:6},
+ chorus:{b:['#9a7ab8','#8a6aa8','#aa8ac8'],sp:['#e0d0f0','#6a4a88'],n:0,s:'chorus'},
+ estone:{b:['#d8d890','#cccc84','#e4e49c'],sp:['#a8a868'],n:8}};
 const ICON={};
 const PICKS=[
 {n:'Деревянная кирка',d:1,c:0,dia:0,col:['#c49a5a','#a47a3f','#7a5a2b']},
@@ -231,40 +338,162 @@ const PICKS=[
 {n:'Алмазная кирка',d:6,c:32000,dia:3,col:['#b8fffb','#4fe3d9','#1fa9a2']},
 {n:'Незеритовая кирка',d:9,c:180000,dia:10,col:['#8a7a84','#4a3f45','#2a2226']}];
 function buildIcons(){
-  ICON.b_gold=texGold();ICON.b_coal=texOre(21,['#161616','#262626','#0e0e0e','#363636']);ICON.b_diamond=texOre(33,['#4ee6e0','#2bb8b3','#bffffb','#3ad8d0']);ICON.b_tnt=texTNT();
+  ICON.b_gold=texGold();ICON.b_coal=texOre(21,['#161616','#262626','#0e0e0e','#363636']);ICON.b_diamond=texOre(33,['#4ee6e0','#2bb8b3','#bffffb','#3ad8d0']);
+  ICON.b_iron=texOre(41,['#d8af93','#c49a7c','#e8c9b0','#b88a6a']);ICON.b_redstone=texOre(55,['#e02020','#ff4a3a','#a01010','#ff7a6a']);ICON.b_emerald=texOre(67,['#5fc9a0','#2e8f6c','#d8fff0','#46b08a']);
+  ICON.b_lapis=texOre(71,['#2b4bd8','#4a6af0','#1a32a8','#7a96ff']);
+  ['tnt','gTnt','rTnt','pTnt'].forEach(k=>ICON['b_'+k]=texTNT(TNT_P[k]));ICON.b_clock=clockBlk();
+  let i=0;Object.keys(BLK).forEach(k=>{ICON['b_'+k]=texBlk(100+(i++)*7,BLK[k])});
   ICON.gblock=ICON.b_gold;ICON.grass=texGrass();ICON.crack1=texCrack(1);ICON.crack2=texCrack(2);ICON.crack3=texCrack(3);
-  ICON.coin=coinTex();ICON.ore=nuggetTex();ICON.coal=lumpTex();ICON.ingot=ingotTex();ICON.apple=appleTex();
-  ICON.diamond=gemTex('#bffffb','#4fe3d9','#1fa9a2');ICON.emerald=gemTex('#b8ffc8','#3fd36a','#1c8f40');
+  ICON.bg_forest=ICON.grass;ICON.bg_ice=texBg(201,['#dff1fb','#cfe8f6','#e8f6fd','#bfdcee'],'#9cc4de');ICON.bg_desert=texBg(202,['#e6d49a','#dcc88c','#eedca6','#d4c080'],'#c8b274');
+  ICON.bg_deep=texBg(203,['#3b3b44','#34343c','#42424c','#2c2c34'],'#1f1f26');ICON.bg_sea=texBg(204,['#2a6fb0','#2e78bc','#2565a4','#357fc6'],'#7fc2f0');
+  ICON.bg_nether=texBg(205,['#6a2222','#5c1c1c','#762828','#4e1616'],'#ff7a1a');ICON.bg_end=texBg(206,['#2a1f3d','#231936','#32264a','#1c1230'],'#8a5fd0');
+  ICON.coin=coinTex();ICON.ore=nuggetTex(5,['#9a6a05','#fff27a','#f2c92a']);ICON.iron=nuggetTex(9,['#555555','#f0f0f0','#bdbdbd']);ICON.coal=lumpTex();ICON.redstone=dustTex();
+  ICON.ingot=ingotTex(GOLDP);ICON.ironIng=ingotTex(IRONP);ICON.gear=gearTex();ICON.circuit=circuitTex();ICON.clock=clockTex();
+  ICON.apple=appleTex(['#f6c92b','#b07a0c','#fff8b0']);ICON.eApple=appleTex(['#c07aff','#7a3fb0','#f0d8ff']);
+  ICON.pHaste=potTex('#ffb13b','#ffe08a');ICON.pLuck=potTex('#3fd36a','#b8ffc8');ICON.pTime=potTex('#5aa0ff','#b8d8ff');
+  ICON.diamond=gemTex('#bffffb','#4fe3d9','#1fa9a2');ICON.emerald=gemTex('#d8fff0','#5fc9a0','#2e8f6c');ICON.gem=gemTex('#b8ffc8','#2fe06a','#12903c');
   PICKS.forEach((p,i)=>ICON['pick'+i]=texPick(p.col));
   Object.keys(MAPS).forEach(k=>{if(MAPS[k].pal)ICON[k]=fromMap(MAPS[k].rows,MAPS[k].pal)});
+  ICON.villager2=fromMap(MAPS.villager.rows,Object.assign({},VPAL,{r:'#2f5aa8',a:'#1f3f7a',B:'#d9a21b'}));
+  ICON.villager3=fromMap(MAPS.villager.rows,Object.assign({},VPAL,{r:'#3f8f3a',a:'#2a6a26',B:'#3a2a18'}));
   ['#e5533d','#f4f4f4','#5aa0ff','#ffb13b'].forEach((c,i)=>ICON['fl'+i]=fromMap(MAPS.flower.rows,{p:c,y:'#ffe94a',g:'#3d7a22'}));
+  let css='';Object.keys(ICON).forEach(k=>{if(k.startsWith('b_')||/^crack/.test(k))css+=`.bt-${k}{background-image:url("${ICON[k]}")}`});
+  const st=document.createElement('style');st.textContent=css;document.head.appendChild(st);
 }
 buildIcons();
 const img=(k,c='')=>`<img class="${c}" src="${ICON[k]}" alt="">`;
 
 /* ================= ДАННЫЕ ================= */
-const GOODS=[{id:'ore',n:'Золотая руда',base:5},{id:'coal',n:'Уголь',base:3},{id:'ingot',n:'Золотой слиток',base:20},{id:'gblock',n:'Золотой блок',base:215},{id:'diamond',n:'Алмаз',base:150}];
+const NEWITEMS=['wood','pumpkin','ice','sand','cactus','lapis','prism','sponge','quartz','glow','obs','chorus'];
+const GOODS=[{id:'ore',n:'Золотая руда',base:5,raw:1,res:60},{id:'coal',n:'Уголь',base:3,raw:1,res:60},{id:'ingot',n:'Золотой слиток',base:20,raw:1,res:20},{id:'gblock',n:'Золотой блок',base:215},{id:'diamond',n:'Алмаз',base:150},
+  {id:'iron',n:'Железная руда',base:4,raw:1,res:60},{id:'ironIng',n:'Железный слиток',base:14,raw:1,res:20},{id:'redstone',n:'Редстоун',base:7,raw:1,res:60},{id:'emerald',n:'Нефрит',base:220},{id:'gear',n:'Шестерёнка',base:55},
+  {id:'wood',n:'Дерево',base:6,raw:1,res:20,loc:'forest'},{id:'pumpkin',n:'Тыква',base:12,raw:1,res:20,loc:'forest'},
+  {id:'ice',n:'Лёд',base:9,raw:1,res:20,loc:'ice'},{id:'sand',n:'Песок',base:5,raw:1,res:20,loc:'desert'},{id:'cactus',n:'Кактус',base:10,raw:1,res:20,loc:'desert'},
+  {id:'lapis',n:'Лазурит',base:30,raw:1,res:20,loc:'deep'},{id:'prism',n:'Призмарин',base:34,raw:1,res:20,loc:'sea'},{id:'sponge',n:'Губка',base:28,raw:1,res:20,loc:'sea'},
+  {id:'quartz',n:'Кварц',base:60,raw:1,res:20,loc:'nether'},{id:'glow',n:'Светокамень',base:70,raw:1,res:20,loc:'nether'},
+  {id:'obs',n:'Обсидиан',base:120,raw:1,res:20,loc:'end'},{id:'chorus',n:'Хорус',base:150,raw:1,res:20,loc:'end'}];
 const GM={};GOODS.forEach(g=>GM[g.id]=g);
-const BT={gold:{hp:4,life:3.2,xp:3,col:['#f9d03f','#fff27a','#c4890a']},coal:{hp:3,life:3,xp:2,col:['#222','#444','#777']},diamond:{hp:7,life:2.4,xp:25,col:['#4ee6e0','#bffffb','#2bb8b3']},tnt:{hp:1,life:3,xp:0,col:['#d6402b','#ff9a1f','#333']}};
+const ITEM={ore:['Золотая руда','ore'],coal:['Уголь','coal'],ingot:['Золотой слиток','ingot'],gblock:['Золотой блок','gblock'],diamond:['Алмаз','diamond'],iron:['Железная руда','iron'],ironIng:['Железный слиток','ironIng'],redstone:['Редстоун','redstone'],emerald:['Нефрит','emerald'],gear:['Шестерёнка','gear'],circuit:['Плата','circuit'],apple:['Золотое яблоко','apple'],eApple:['Зачарованное яблоко','eApple'],pHaste:['Зелье спешки','pHaste'],pLuck:['Зелье удачи','pLuck'],pTime:['Зелье времени','pTime'],
+  wood:['Дерево','b_log'],pumpkin:['Тыква','b_pumpkin'],ice:['Лёд','b_ice'],sand:['Песок','b_sand'],cactus:['Кактус','b_cactus'],lapis:['Лазурит','b_lapis'],prism:['Призмарин','b_prism'],sponge:['Губка','b_sponge'],quartz:['Кварц','b_quartz'],glow:['Светокамень','b_glow'],obs:['Обсидиан','b_obs'],chorus:['Хорус','b_chorus'],gems:['Изумруд','gem']};
+const INV=['iron','ironIng','redstone','emerald','gear','circuit','apple','eApple','pHaste','pLuck','pTime','gblock'];
+/* стандартные блоки */
+const BT={gold:{hp:4,life:3.2,xp:3},coal:{hp:3,life:3,xp:2},diamond:{hp:7,life:2.4,xp:25},iron:{hp:4,life:3,xp:4},redstone:{hp:3,life:3,xp:4},emerald:{hp:8,life:2.4,xp:40},chest:{hp:5,life:4,xp:15},
+  tnt:{hp:1,life:3,xp:0},gTnt:{hp:2,life:3.2,xp:0},rTnt:{hp:3,life:3.6,xp:0},pTnt:{hp:3,life:3.2,xp:0},clock:{hp:2,life:2.6,xp:2}};
+const PCOL={gold:['#f9d03f','#fff27a','#c4890a'],coal:['#222','#444','#777'],diamond:['#4ee6e0','#bffffb','#2bb8b3'],iron:['#d8af93','#e8c9b0','#8a8a8a'],redstone:['#e02020','#ff6a5a','#a01010'],emerald:['#5fc9a0','#d8fff0','#2e8f6c'],chest:['#a8793c','#c49a5a','#f9d03f'],
+  tnt:['#d9731f','#ff9a1f','#333'],gTnt:['#3fa535','#8fe35a','#14320f'],rTnt:['#d6202a','#ff5a5a','#222'],pTnt:['#8a3fd0','#b07af0','#2a1048'],clock:['#f2ead0','#d9a21b','#222']};
+/* блоки локаций: hp, время жизни, опыт, ресурс, кол-во, монеты */
+const NB={
+ leaves:{hp:2,life:3,xp:1,res:null,coins:[1,3]},dirt:{hp:1,life:2.6,xp:1,res:null,coins:[1,2]},
+ log:{hp:4,life:3.2,xp:3,res:'wood',amt:[1,3],coins:[1,2]},pumpkin:{hp:3,life:3,xp:4,res:'pumpkin',amt:[1,2],coins:[2,4]},
+ snow:{hp:2,life:3,xp:2,res:null,coins:[2,4]},ice:{hp:3,life:3,xp:4,res:'ice',amt:[1,3],coins:[2,4]},
+ sandstone:{hp:3,life:3,xp:3,res:null,coins:[3,6]},sand:{hp:1,life:2.6,xp:2,res:'sand',amt:[1,4],coins:[1,3]},cactus:{hp:3,life:3,xp:4,res:'cactus',amt:[1,2],coins:[3,6]},
+ deepslate:{hp:5,life:3.2,xp:5,res:null,coins:[5,9]},lapis:{hp:5,life:3,xp:8,res:'lapis',amt:[1,3],coins:[6,10]},
+ coral:{hp:3,life:3,xp:5,res:null,coins:[6,12]},prism:{hp:5,life:3,xp:9,res:'prism',amt:[1,3],coins:[8,14]},sponge:{hp:3,life:3,xp:9,res:'sponge',amt:[1,2],coins:[8,14]},
+ nrack:{hp:4,life:3,xp:7,res:null,coins:[10,18]},quartz:{hp:5,life:3,xp:12,res:'quartz',amt:[1,3],coins:[12,20]},glow:{hp:6,life:3,xp:14,res:'glow',amt:[1,2],coins:[14,24]},
+ estone:{hp:5,life:3,xp:12,res:null,coins:[20,35]},obs:{hp:9,life:3.4,xp:20,res:'obs',amt:[1,2],coins:[25,40]},chorus:{hp:4,life:3,xp:16,res:'chorus',amt:[1,3],coins:[22,38]}};
+Object.keys(NB).forEach(k=>{BT[k]={hp:NB[k].hp,life:NB[k].life,xp:NB[k].xp};PCOL[k]=BLK[k]?BLK[k].b.slice(0,3):['#888','#aaa','#666']});
+PCOL.lapis=['#2b4bd8','#4a6af0','#7a96ff'];
+const BNAME={gold:['Золото','руда и монеты'],coal:['Уголь','топливо'],iron:['Железо','для деталей'],redstone:['Редстоун','зелья, механизмы'],diamond:['Алмаз','редкий'],emerald:['Нефрит','очень редкий'],chest:['Сундук','лут и детали'],clock:['Часы','сломай: +время'],
+  tnt:['TNT','удар = взрыв, −время'],gTnt:['Зелёный TNT','сломать = −2 с'],rTnt:['Красный TNT','сломай! иначе конец раунда'],pTnt:['Фиолетовый TNT','сломай! иначе −3 с'],
+  leaves:['Листва','монеты'],dirt:['Земля','монеты'],log:['Дерево','ресурс'],pumpkin:['Тыква','ресурс'],snow:['Снег','монеты'],ice:['Лёд','ресурс'],sandstone:['Песчаник','монеты'],sand:['Песок','ресурс'],cactus:['Кактус','ресурс'],
+  deepslate:['Глубинный сланец','монеты'],lapis:['Лазурит','ресурс'],coral:['Коралл','монеты'],prism:['Призмарин','ресурс'],sponge:['Губка','ресурс'],nrack:['Незерак','монеты'],quartz:['Кварц','ресурс'],glow:['Светокамень','ресурс'],estone:['Эндерняк','монеты'],obs:['Обсидиан','ресурс'],chorus:['Хорус','ресурс']};
+const LOCS=[
+{id:'forest',n:'Древесный лес',ic:'b_log',goal:150,cost:0,w:{gold:42,coal:18,tnt:7,gTnt:4,clock:4,chest:3},nat:{leaves:34,dirt:16,log:22,pumpkin:9}},
+{id:'ice',n:'Ледяной лес',ic:'b_ice',goal:220,cost:2000,w:{gold:34,coal:14,iron:14,diamond:2,tnt:7,gTnt:4,pTnt:3,clock:4,chest:3},nat:{ice:26,snow:22}},
+{id:'desert',n:'Пустыня',ic:'b_sand',goal:300,cost:12000,w:{gold:34,coal:12,iron:12,redstone:8,diamond:2.5,tnt:7,gTnt:4,pTnt:4,rTnt:3,clock:4,chest:3},nat:{sand:26,cactus:12,sandstone:14}},
+{id:'deep',n:'Глубинная шахта',ic:'b_lapis',goal:400,cost:60000,w:{gold:30,coal:14,iron:18,redstone:14,diamond:5,emerald:1.5,tnt:7,gTnt:4,pTnt:4,rTnt:4,clock:4,chest:4},nat:{lapis:14,deepslate:18}},
+{id:'sea',n:'Море',ic:'b_prism',goal:500,cost:250000,w:{gold:26,iron:12,redstone:10,diamond:4,emerald:2,tnt:6,gTnt:4,pTnt:5,rTnt:4,clock:4,chest:5},nat:{prism:20,sponge:10,coral:16}},
+{id:'nether',n:'Незер',ic:'b_quartz',goal:650,cost:900000,w:{gold:40,coal:6,iron:8,redstone:14,diamond:4,emerald:2,tnt:8,gTnt:4,pTnt:5,rTnt:5,clock:4,chest:4},nat:{quartz:20,glow:12,nrack:20}},
+{id:'end',n:'Энд',ic:'b_obs',goal:800,cost:3500000,w:{gold:30,iron:10,redstone:12,diamond:6,emerald:3,tnt:8,gTnt:4,pTnt:6,rTnt:6,clock:4,chest:5},nat:{obs:18,chorus:12,estone:20}}];
+const LM={};LOCS.forEach(l=>LM[l.id]=l);
 const pw=(b,e,l)=>Math.round(b*Math.pow(e,l));
 const UPG=[
 {id:'sharp',n:'Заточка',ic:'pick3',max:6,ds:l=>`Урон кирки +1 за уровень (сейчас +${l})`,cost:l=>({c:pw(250,1.9,l),d:0})},
-{id:'time',n:'Шахтёрские фонари',ic:'torch',max:10,ds:l=>`Раунд длится ${30+5*l} с (+5 с за уровень)`,cost:l=>({c:pw(120,1.55,l),d:0})},
+{id:'time',n:'Шахтёрские фонари',ic:'torch',max:10,ds:l=>`+5 секунд к раунду за уровень (сейчас +${5*l})`,cost:l=>({c:pw(120,1.55,l),d:0})},
 {id:'spawn',n:'Богатая жила',ic:'b_gold',max:10,ds:l=>`Блоки появляются чаще, до ${Math.min(12,4+l)} на поле`,cost:l=>({c:pw(200,1.7,l),d:0})},
-{id:'luck',n:'Удача',ic:'diamond',max:8,ds:l=>`Больше руды и угля, чаще алмазы (ур. ${l})`,cost:l=>({c:pw(500,2,l),d:l>=2?l-1:0})},
-{id:'helpers',n:'Жители-помощники',ic:'villager',max:8,ds:l=>`Сами бьют блоки в раунде (${l} шт.)`,cost:l=>({c:pw(400,1.65,l),d:0})},
+{id:'luck',n:'Удача',ic:'diamond',max:8,ds:l=>`Больше добычи, чаще алмазы и сундуки (ур. ${l})`,cost:l=>({c:pw(500,2,l),d:l>=2?l-1:0})},
+{id:'helpers',n:'Жители-помощники',ic:'villager',max:6,ds:l=>`Бьют блоки слабее вас, но стабильно (${l} шт.)`,cost:l=>({c:pw(900,1.85,l),d:0})},
 {id:'cart',n:'Вагонетка',ic:'cart',max:10,ds:l=>`Копает руду без раундов: ${(l*.3).toFixed(1)}/с`,cost:l=>({c:pw(600,1.7,l),d:0})},
-{id:'slots',n:'Больше печей',ic:'furnace',max:8,ds:l=>`Плавят одновременно: ${1+l}`,cost:l=>({c:pw(300,1.8,l),d:0})},
+{id:'slots',n:'Больше печей',ic:'furnace',max:8,ds:l=>`Плавят одновременно: ${1+l} (обе печи)`,cost:l=>({c:pw(300,1.8,l),d:0})},
 {id:'smeltSpd',n:'Меха',ic:'fire',max:6,ds:l=>`Плавка: ${(6*Math.pow(.88,l)).toFixed(1)} с на слиток`,cost:l=>({c:pw(400,1.75,l),d:0})},
-{id:'trade',n:'Репутация торговца',ic:'emerald',max:10,ds:l=>`Цены продажи на рынке +${l*5}%`,cost:l=>({c:pw(800,1.9,l),d:0})},
-{id:'tntShield',n:'Сапёрные очки',ic:'b_tnt',max:3,ds:l=>`TNT отнимает ${Math.max(1,4-l)} с вместо 4`,cost:l=>({c:pw(700,2.2,l),d:0})}];
+{id:'cool',n:'Охлаждение',ic:'clock',max:5,ds:l=>`Перезарядка способностей −${Math.round((1-Math.pow(.92,l))*100)}%`,cost:l=>({c:pw(900,2,l),d:0})},
+{id:'trade',n:'Репутация торговца',ic:'gem',max:10,ds:l=>`Цены продажи на рынке +${l*5}%`,cost:l=>({c:pw(800,1.9,l),d:0})},
+{id:'tntShield',n:'Сапёрные очки',ic:'b_tnt',max:3,ds:l=>`Взрыв TNT отнимает на ${l} с меньше`,cost:l=>({c:pw(700,2.2,l),d:0})}];
+/* Жители */
+const autoCycleFor=l=>Math.max(20,60-8*l);
+const autoEffFor=l=>.3+.1*l;
+const VILL=[
+{id:'autoM',n:'Автодобытчик',ic:'villager3',max:5,ds:l=>l?`Сам запускает добычу каждые ${autoCycleFor(l)} с. Эффективность ${Math.round(autoEffFor(l)*100)}% от ручной, бомб не трогает`:'Сам запускает добычу, пока вы заняты другими делами',cost:l=>({c:pw(15000,2.2,l),d:l===0?10:0})},
+{id:'merch',n:'Перекупщик',ic:'villager2',max:5,ds:l=>l?`Торгует излишками (запас ${'60/20'} оставляет). Продаёт при цене от +10%, докупает при −18%. Объём ${6+4*l} за раз, бонус цены +${3*(l-1)}%`:'Сам торгует на рынке параллельно с вами: продаёт излишки дорого, докупает дёшево',cost:l=>({c:l===0?50000:pw(80000,2.3,l-1),d:l===0?30:0})}];
 const EVENTS=[
 {t:'Караван скупает золото! Руда, слитки и блоки дороже',mult:{ore:1.4,ingot:1.4,gblock:1.4}},
 {t:'Обвал рынка: золото дешевеет',mult:{ore:.7,ingot:.7,gblock:.7}},
 {t:'Нехватка угля: уголь дорожает',mult:{coal:1.9}},
 {t:'Алмазная лихорадка: алмазы в цене',mult:{diamond:1.5}},
-{t:'Налог на кузнецов: слитки дешевле',mult:{ingot:.8,gblock:.85}},
-{t:'Строительный бум: золотые блоки нарасхват',mult:{gblock:1.5}}];
+{t:'Налог на кузнецов: слитки дешевле',mult:{ingot:.8,gblock:.85,ironIng:.85}},
+{t:'Строительный бум: золотые блоки нарасхват',mult:{gblock:1.5}},
+{t:'Спрос на механизмы: шестерёнки и железо дороже',mult:{gear:1.5,iron:1.3,ironIng:1.3}},
+{t:'Редстоуновая лихорадка: редстоун в цене',mult:{redstone:1.7}},
+{t:'Странствующий торговец: нефрит дороже',mult:{emerald:1.4}},
+{t:'Ярмарка: дерево, тыквы и песок нарасхват',mult:{wood:1.6,pumpkin:1.6,sand:1.5,cactus:1.5}},
+{t:'Мода на кварц и светокамень',mult:{quartz:1.5,glow:1.5,lapis:1.4}}];
+/* Верстак */
+const RECIPES=[
+{id:'gblock',g:'Материалы',n:'Золотой блок',ic:'gblock',cost:{ingot:9},out:'gblock',amt:1,many:1,ds:'Дороже, чем 9 слитков по отдельности'},
+{id:'gear',g:'Материалы',n:'Шестерёнка',ic:'gear',cost:{ironIng:3,redstone:1},out:'gear',amt:1,many:1,ds:'Деталь для механизмов'},
+{id:'circuit',g:'Материалы',n:'Плата',ic:'circuit',cost:{gear:1,redstone:4,ingot:1},out:'circuit',amt:1,many:1,ds:'Редкая деталь для сложных механизмов'},
+{id:'apple',g:'Зелья и еда',n:'Золотое яблоко',ic:'apple',cost:{ingot:8},out:'apple',amt:1,many:1,ds:'Перед раундом: добыча ×2'},
+{id:'eApple',g:'Зелья и еда',n:'Зачарованное яблоко',ic:'eApple',cost:{gblock:2,emerald:2},out:'eApple',amt:1,many:0,ds:'Перед раундом: добыча ×3 и +10 с'},
+{id:'pHaste',g:'Зелья и еда',n:'Зелье спешки',ic:'pHaste',cost:{redstone:4,ingot:1},out:'pHaste',amt:1,many:1,ds:'Перед раундом: урон ×2'},
+{id:'pLuck',g:'Зелья и еда',n:'Зелье удачи',ic:'pLuck',cost:{emerald:1,redstone:2},out:'pLuck',amt:1,many:0,ds:'Перед раундом: удача +3'},
+{id:'pTime',g:'Зелья и еда',n:'Зелье времени',ic:'pTime',cost:{redstone:6,ingot:2},out:'pTime',amt:1,many:1,ds:'Перед раундом: +10 секунд'},
+{id:'abTnt',g:'Инструменты',n:'Динамит',ic:'b_tnt',cost:{gear:2,redstone:6,coal:4},out:'abTnt',amt:1,once:1,ds:'Кнопка в раунде: бьёт все блоки ×3 и обезвреживает бомбы. Перезарядка 20 с'},
+{id:'abRage',g:'Инструменты',n:'Золотой шквал',ic:'pick4',cost:{circuit:1,ingot:12},out:'abRage',amt:1,once:1,ds:'5 с: урон ×3, блоки появляются вдвое чаще. Перезарядка 25 с'},
+{id:'abFreeze',g:'Инструменты',n:'Хроно-часы',ic:'clock',cost:{circuit:1,gear:2,emerald:1,redstone:8},out:'abFreeze',amt:1,once:1,ds:'6 с блоки не исчезают. Перезарядка 30 с'},
+{id:'cvCoal',g:'Конвертер',n:'Древесный уголь',ic:'coal',cost:{wood:4},out:'coal',amt:2,many:1,ds:'4 дерева в 2 угля'},
+{id:'cvApple',g:'Конвертер',n:'Тыквенный пирог',ic:'apple',cost:{pumpkin:6,ingot:3},out:'apple',amt:1,many:1,ds:'Дешевле золотого яблока'},
+{id:'cvLuck',g:'Конвертер',n:'Зачарование удачи',ic:'pLuck',cost:{lapis:4,ingot:1},out:'pLuck',amt:1,many:1,ds:'Лазурит и золото в зелье удачи'},
+{id:'cvHaste',g:'Конвертер',n:'Светящееся зелье',ic:'pHaste',cost:{glow:4,redstone:2},out:'pHaste',amt:1,many:1,ds:'Светокамень в зелье спешки'},
+{id:'cvTime',g:'Конвертер',n:'Морское зелье',ic:'pTime',cost:{prism:4,sponge:2},out:'pTime',amt:1,many:1,ds:'Призмарин и губка в зелье времени'},
+{id:'cvCirc',g:'Конвертер',n:'Кварцевая плата',ic:'circuit',cost:{quartz:6,gear:1},out:'circuit',amt:1,many:1,ds:'Дешевле обычной платы'},
+{id:'cvEApple',g:'Конвертер',n:'Эндерское яблоко',ic:'eApple',cost:{obs:4,chorus:4,apple:1},out:'eApple',amt:1,many:1,ds:'Зачарованное яблоко из ресурсов Энда'}];
+const CONS=[['apple','добыча ×2'],['eApple','добыча ×3 и +10 с'],['pHaste','урон ×2'],['pLuck','удача +3'],['pTime','+10 секунд']];
+const AB=[{id:'abTnt',n:'Динамит',ic:'b_tnt',cd:20},{id:'abRage',n:'Шквал',ic:'pick4',cd:25},{id:'abFreeze',n:'Хроно',ic:'clock',cd:30}];
+const LVUNLOCK={2:'Сундуки и зелёный TNT',3:'Фиолетовый TNT'};
+/* Древо навыков */
+const TREE=[
+{id:'t_dmg1',b:'Добыча',ic:'pick3',n:'Крепкие руки',ds:'+1 урон',req:[],cost:{coins:500},fx:{dmg:1}},
+{id:'t_ore1',b:'Добыча',ic:'pick3',n:'Жила',ds:'+15% добычи ресурсов',req:['t_dmg1'],cost:{coins:2000,ingot:5},fx:{ore:.15}},
+{id:'t_combo',b:'Добыча',ic:'pick3',n:'Ритм',ds:'Комбо держится на 0.6 с дольше',req:['t_dmg1'],cost:{coins:6000},fx:{combo:.6}},
+{id:'t_dmg2',b:'Добыча',ic:'pick3',n:'Мастер кирки',ds:'+2 урона',req:['t_ore1','t_combo'],cost:{coins:25000,gear:3},fx:{dmg:2}},
+{id:'t_coin',b:'Добыча',ic:'pick3',n:'Золотая лихорадка',ds:'+25% монет с блоков',req:['t_dmg2'],cost:{coins:60000,ingot:20},fx:{coin:.25}},
+{id:'t_time1',b:'Время',ic:'clock',n:'Запас часов',ds:'+5 секунд к раунду',req:[],cost:{coins:1000},fx:{time:5}},
+{id:'t_clock1',b:'Время',ic:'clock',n:'Хроно-блок',ds:'Блок-часы дают +2 с вместо +1',req:['t_time1'],cost:{coins:4000},fx:{clock:1}},
+{id:'t_spawn',b:'Время',ic:'clock',n:'Приманка',ds:'Блоки появляются чаще (+2 к уровню жилы)',req:['t_time1'],cost:{coins:30000},fx:{spawn:2}},
+{id:'t_time2',b:'Время',ic:'clock',n:'Вторая смена',ds:'+10 секунд к раунду',req:['t_clock1'],cost:{coins:20000,circuit:2},fx:{time:10}},
+{id:'t_sell1',b:'Торговля',ic:'coin',n:'Торгаш',ds:'+5% к цене продажи',req:[],cost:{coins:1500},fx:{sell:.05}},
+{id:'t_sell2',b:'Торговля',ic:'coin',n:'Аукцион',ds:'+10% к цене продажи',req:['t_sell1'],cost:{coins:12000},fx:{sell:.10}},
+{id:'t_buy',b:'Торговля',ic:'coin',n:'Оптовик',ds:'Наценка покупки 25% → 15%',req:['t_sell1'],cost:{coins:18000},fx:{spread:.10}},
+{id:'t_sell3',b:'Торговля',ic:'coin',n:'Монополист',ds:'+15% к цене продажи',req:['t_sell2','t_buy'],cost:{coins:90000,gblock:5},fx:{sell:.15}},
+{id:'t_smelt1',b:'Механика',ic:'gear',n:'Улучшенные меха',ds:'Плавка на 15% быстрее',req:[],cost:{coins:3000,ironIng:5},fx:{smelt:.15}},
+{id:'t_slot',b:'Механика',ic:'gear',n:'Автоматика',ds:'+1 печь',req:['t_smelt1'],cost:{coins:15000,gear:3},fx:{slots:1}},
+{id:'t_cool',b:'Механика',ic:'gear',n:'Радиаторы',ds:'Перезарядка способностей −20%',req:['t_slot'],cost:{coins:40000,circuit:2},fx:{cd:.2}},
+{id:'t_auto',b:'Механика',ic:'gear',n:'Конвейер',ds:'+20% эффективности автодобытчика',req:['t_slot'],cost:{coins:50000,circuit:1},fx:{autoEff:.2}},
+{id:'t_pad',b:'Выживание',ic:'b_tnt',n:'Подушка',ds:'Взрыв TNT отнимает на 1 с меньше',req:[],cost:{coins:2500},fx:{pen:1}},
+{id:'t_green',b:'Выживание',ic:'b_gTnt',n:'Зелёный сигнал',ds:'Зелёный TNT безвреден, даже если сломать',req:['t_pad'],cost:{coins:8000},fx:{green:1}},
+{id:'t_defuse',b:'Выживание',ic:'b_pTnt',n:'Сапёр',ds:'Фиолетовый TNT отнимает вдвое меньше',req:['t_pad'],cost:{coins:15000},fx:{defuse:1}},
+{id:'t_shield',b:'Выживание',ic:'b_rTnt',n:'Бронеплита',ds:'Красный TNT отнимает половину времени, а не весь раунд',req:['t_defuse'],cost:{coins:50000,circuit:5},fx:{shield:1}}];
+const TM={};TREE.forEach(n=>TM[n.id]=n);
+let TV={};
+function rebuildTV(){TV={};TREE.forEach(n=>{if(S.tree[n.id])for(const k in n.fx)TV[k]=(TV[k]||0)+n.fx[k]})}
+const tv=k=>TV[k]||0;
+/* Изумрудные улучшения */
+const GEMPERK=[
+{id:'gm_coin',n:'Магнат',ic:'coin',max:4,ds:l=>`+25% монет с блоков навсегда (сейчас +${l*25}%)`,cost:l=>20*(l+1)},
+{id:'gm_ore',n:'Королевская жила',ic:'ore',max:4,ds:l=>`+25% добычи ресурсов навсегда (сейчас +${l*25}%)`,cost:l=>20*(l+1)},
+{id:'gm_time',n:'Вечные часы',ic:'clock',max:5,ds:l=>`+5 секунд к раунду навсегда (сейчас +${l*5})`,cost:l=>15*(l+1)},
+{id:'gm_auto',n:'Умный автодобытчик',ic:'villager3',max:4,ds:l=>`+15% эффективности автодобытчика (сейчас +${l*15}%)`,cost:l=>25*(l+1)},
+{id:'gm_slot',n:'Двойная плавка',ic:'furnace',max:3,ds:l=>`+1 печь навсегда (сейчас +${l})`,cost:l=>30*(l+1)}];
 const ACH=[
 {id:'first',n:'Первая добыча',d:'Сломай 1 блок',r:10,ok:()=>S.stats.blocks>=1},
 {id:'b100',n:'Шахтёр',d:'Сломай 100 блоков',r:50,ok:()=>S.stats.blocks>=100},
@@ -277,32 +506,64 @@ const ACH=[
 {id:'dia',n:'Алмазы!',d:'Добудь алмаз',r:100,ok:()=>S.stats.diaGot>=1},
 {id:'tnt1',n:'Бабах',d:'Взорви TNT',r:20,ok:()=>S.stats.tnt>=1},
 {id:'tnt10',n:'Подрывник',d:'Взорви 10 TNT',r:100,ok:()=>S.stats.tnt>=10},
+{id:'def10',n:'Сапёр',d:'Обезвредь 10 бомб',r:200,ok:()=>S.stats.defused>=10},
 {id:'c20',n:'Разгон',d:'Комбо 20',r:100,ok:()=>S.stats.maxCombo>=20},
 {id:'c50',n:'Неудержимый',d:'Комбо 50',r:400,ok:()=>S.stats.maxCombo>=50},
 {id:'rich1',n:'Зажиточный',d:'Заработай 10 000 монет',r:500,ok:()=>S.stats.coinsEarned>=10000},
 {id:'rich2',n:'Миллионер',d:'Заработай 1 000 000 монет',r:50000,ok:()=>S.stats.coinsEarned>=1000000},
 {id:'dpick',n:'Алмазная мечта',d:'Купи алмазную кирку',r:1000,ok:()=>S.pick>=4},
 {id:'apple',n:'Золотой гурман',d:'Скрафти золотое яблоко',r:100,ok:()=>S.stats.apples>=1},
-{id:'trader',n:'Торговец',d:'Продай 100 товаров',r:200,ok:()=>S.stats.sold>=100}];
+{id:'trader',n:'Торговец',d:'Продай 100 товаров',r:200,ok:()=>S.stats.sold>=100},
+{id:'ch10',n:'Охотник за сокровищами',d:'Открой 10 сундуков',r:300,ok:()=>S.stats.chests>=10},
+{id:'cr10',n:'Мастер верстака',d:'Скрафти 10 предметов',r:300,ok:()=>S.stats.crafted>=10},
+{id:'eng',n:'Инженер',d:'Создай инструмент-механизм',r:400,ok:()=>S.abTnt||S.abRage||S.abFreeze},
+{id:'loc1',n:'Первопроходец',d:'Пройди Древесный лес',r:300,ok:()=>S.locDone.forest},
+{id:'loc4',n:'Спелеолог',d:'Пройди Глубинную шахту',r:5000,ok:()=>S.locDone.deep},
+{id:'auto',n:'Автоматизация',d:'Найми автодобытчика',r:500,ok:()=>S.autoM>=1},
+{id:'merch',n:'Делец',d:'Найми перекупщика',r:1000,ok:()=>S.merch>=1},
+{id:'tree5',n:'Мудрец',d:'Изучи 5 навыков',r:500,ok:()=>Object.keys(S.tree).length>=5},
+{id:'won',n:'Конец игры',d:'Пройди Энд',r:100000,ok:()=>S.won},
+{id:'rb1',n:'Новая жизнь',d:'Соверши перекрутку',r:2000,ok:()=>S.rebirths>=1}];
 
 /* ================= СОСТОЯНИЕ ================= */
 const KEY='gold_rush_mc_v1';
-const defaults=()=>({coins:0,ore:0,coal:0,ingot:0,diamond:0,gblock:0,apple:0,xp:0,level:1,pick:0,sharp:0,time:0,spawn:0,luck:0,helpers:0,cart:0,slots:0,smeltSpd:0,trade:0,tntShield:0,queue:0,prog:0,cartAcc:0,sound:true,
-  stats:{blocks:0,rounds:0,tnt:0,coinsEarned:0,best:0,maxCombo:0,ingots:0,sold:0,diaGot:0,apples:0},ach:{},mk:null,last:Date.now()});
-function load(){const d=defaults();try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);Object.assign(d,o);d.stats=Object.assign(defaults().stats,o.stats||{});d.ach=o.ach||{}}}catch(e){}return d}
-let S=load();
-function save(){S.last=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
+const defaults=()=>{const d={coins:0,ore:0,coal:0,ingot:0,diamond:0,gblock:0,apple:0,iron:0,ironIng:0,redstone:0,emerald:0,gear:0,circuit:0,eApple:0,pHaste:0,pLuck:0,pTime:0,abTnt:0,abRage:0,abFreeze:0,gems:0,
+  xp:0,level:1,pick:0,sharp:0,time:0,spawn:0,luck:0,helpers:0,cart:0,slots:0,smeltSpd:0,trade:0,tntShield:0,cool:0,queue:0,prog:0,qI:0,progI:0,cartAcc:0,
+  stars:0,rebirths:0,runCoins:0,sound:true,loc:'forest',locProg:{},locDone:{},locUnl:{forest:1},won:0,tree:{},gp:{},merch:0,merchProfit:0,autoM:0,autoT:0,adCnt:0,
+  stats:{blocks:0,rounds:0,tnt:0,defused:0,coinsEarned:0,best:0,maxCombo:0,ingots:0,sold:0,diaGot:0,apples:0,chests:0,crafted:0},ach:{},mk:null,last:Date.now()};
+  NEWITEMS.forEach(k=>d[k]=0);return d};
+function load(){const d=defaults();try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);Object.assign(d,o);d.stats=Object.assign(defaults().stats,o.stats||{});d.ach=o.ach||{};d.locUnl=Object.assign({forest:1},o.locUnl||{})}}catch(e){}return d}
+let S=load(),noSave=false;
+if(!LM[S.loc])S.loc='forest';
+function save(){if(noSave)return;S.last=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 if(!S.mk||!S.mk.m||!S.mk.h)S.mk={m:{},h:{}};
 GOODS.forEach(g=>{if(typeof S.mk.m[g.id]!=='number')S.mk.m[g.id]=1;if(!Array.isArray(S.mk.h[g.id])||!S.mk.h[g.id].length)S.mk.h[g.id]=Array(18).fill(g.base)});
-let R=null,EV=null,tab='mine';
+rebuildTV();
+let R=null,EV=null,tab='mine',lastG=null;const useSel={};
 
 const fmt=n=>{n=Math.floor(n);if(n<1000)return String(n);const u=['K','M','B','T'];let i=-1,v=n;while(v>=1000&&i<u.length-1){v/=1000;i++}return(v<10?v.toFixed(2):v<100?v.toFixed(1):String(Math.floor(v)))+u[i]};
-const dmg=()=>PICKS[S.pick].d+S.sharp;
-const roundTime=()=>30+5*S.time;
-const tntPen=()=>Math.max(1,4-S.tntShield);
+const gp=id=>S.gp[id]||0;
+const dmg=()=>PICKS[S.pick].d+S.sharp+tv('dmg');
+const curDmg=()=>Math.round(dmg()*(R&&R.haste?2:1)*(R&&R.rageT>0?3:1));
+const luckEff=()=>S.luck+(R&&R.luckP?3:0);
+const roundTime=()=>30+5*S.time+tv('time')+5*gp('gm_time');
+const effSpawn=()=>S.spawn+tv('spawn');
+const tntPen=()=>Math.max(1,4-S.tntShield-tv('pen'));
 const need=l=>Math.round(60*Math.pow(l,1.45));
-const smeltTime=()=>6*Math.pow(.88,S.smeltSpd);
-function addCoins(n){S.coins+=n;S.stats.coinsEarned+=n}
+const slotsN=()=>1+S.slots+tv('slots')+gp('gm_slot');
+const smeltTime=()=>6*Math.pow(.88,S.smeltSpd)*(1-tv('smelt'));
+const bonusMul=()=>(1+(S.level-1)*.02)*(1+S.stars*.1);
+const mulOre=()=>1+tv('ore')+.25*gp('gm_ore');
+const mulCoin=()=>1+tv('coin')+.25*gp('gm_coin');
+const cdMul=()=>Math.pow(.92,S.cool)*(1-tv('cd'));
+const autoCycle=()=>autoCycleFor(S.autoM);
+const autoEff=()=>autoEffFor(S.autoM)+tv('autoEff')+.15*gp('gm_auto');
+const isHaz=t=>t==='tnt'||t==='gTnt'||t==='rTnt'||t==='pTnt';
+const curLoc=()=>LM[S.loc];
+function addCoins(n){S.coins+=n;S.stats.coinsEarned+=n;S.runCoins+=n}
+const bridge=()=>window.GoldRushBridge||defaultBridge;
+function fakeAd(cb){toast('Реклама (тест)… 2 с','star');setTimeout(()=>cb(true),2000)}
+const defaultBridge={showRewardedAd:(p,cb)=>GR.testMode?fakeAd(cb):cb(false),showInterstitial:()=>{},purchase:(sku,cb)=>GR.testMode?cb(true):cb(false)};
 
 /* ================= ЗВУК ================= */
 let AC=null;
@@ -321,135 +582,246 @@ const sfx={
  end:()=>{[659,523,392].forEach((f,i)=>tone(f,.14,'square',.04,0,i*.1))}};
 
 /* ================= ВЕРХНЯЯ ПАНЕЛЬ ================= */
-const RES=[['coins','coin'],['ore','ore'],['coal','coal'],['ingot','ingot'],['diamond','diamond']];
+const RES=[['coins','coin'],['ore','ore'],['coal','coal'],['ingot','ingot'],['diamond','diamond'],['gems','gem']];
 $('res').innerHTML=RES.map(([k,i])=>`<div class="chip" id="chip-${k}">${img(i)}<b id="v-${k}">0</b></div>`).join('');
 $('logoimg').src=ICON.b_gold;
 let hkey='';
-function updateHeader(){const key=`${S.coins}|${S.ore}|${S.coal}|${S.ingot}|${S.diamond}|${S.xp}|${S.level}`;if(key===hkey)return;hkey=key;
-  RES.forEach(([k])=>{$('v-'+k).textContent=fmt(S[k])});const nd=need(S.level);$('lvTxt').textContent='Ур. '+S.level;$('xpFill').style.width=clamp(S.xp/nd*100,0,100)+'%';$('xpTxt').textContent=`+${(S.level-1)*2}% добычи`}
+function updateHeader(){const key=`${S.coins}|${S.ore}|${S.coal}|${S.ingot}|${S.diamond}|${S.gems}|${S.xp}|${S.level}|${S.stars}`;if(key===hkey)return;hkey=key;
+  RES.forEach(([k])=>{$('v-'+k).textContent=fmt(S[k])});const nd=need(S.level);$('lvTxt').textContent='Ур. '+S.level+(S.stars?'  ★'+S.stars:'');$('xpFill').style.width=clamp(S.xp/nd*100,0,100)+'%';$('xpTxt').textContent='+'+Math.round((bonusMul()-1)*100)+'% добычи'}
 function bump(k){const c=$('chip-'+k);if(!c)return;c.classList.remove('bump');void c.offsetWidth;c.classList.add('bump')}
 function toast(msg,icon){const d=document.createElement('div');d.className='toast';d.innerHTML=(icon&&ICON[icon]?img(icon):'')+`<span>${msg}</span>`;const t=$('toasts');t.appendChild(d);while(t.children.length>4)t.removeChild(t.firstChild);setTimeout(()=>{d.style.transition='opacity .4s';d.style.opacity='0';setTimeout(()=>d.remove(),400)},2600)}
-function addXP(n){S.xp+=n;let up=false;while(S.xp>=need(S.level)){S.xp-=need(S.level);S.level++;up=true;addCoins(50*S.level);toast(`Уровень ${S.level}! Бонус +${50*S.level} монет`,'star')}if(up)sfx.level()}
+function addXP(n){S.xp+=n;let up=false;while(S.xp>=need(S.level)){S.xp-=need(S.level);S.level++;up=true;addCoins(50*S.level);toast(`Уровень ${S.level}! Бонус +${50*S.level} монет`,'star');if(LVUNLOCK[S.level])setTimeout(()=>toast('Открыто: '+LVUNLOCK[S.level],'b_chest'),700)}if(up){sfx.level();if(tab==='mine')buildMineInfo()}}
 function checkAch(){ACH.forEach(a=>{if(!S.ach[a.id]&&a.ok()){S.ach[a.id]=1;addCoins(a.r);toast(`Достижение: ${a.n} (+${fmt(a.r)})`,'star');sfx.level()}})}
 
 /* ================= ЭФФЕКТЫ ================= */
-function particles(x,y,type,n,s=1){const fx=$('fx');if(fx.childElementCount>140)return;const cols=BT[type].col;
+function particles(x,y,type,n,s=1){const fx=$('fx');if(fx.childElementCount>120)return;const cols=PCOL[type]||PCOL.gold;
   for(let i=0;i<n;i++){const p=document.createElement('i');p.className='pt';const sz=ri(3,6)*(n>8?1.2:1);p.style.cssText=`left:${x}px;top:${y}px;width:${sz}px;height:${sz}px;background:${cols[ri(0,cols.length-1)]}`;fx.appendChild(p);
     const a=rnd(0,6.283),dist=rnd(14,50)*s*(n>8?1.3:1);const an=p.animate([{transform:'translate(0,0)',opacity:1},{transform:`translate(${Math.cos(a)*dist}px,${Math.sin(a)*dist+22}px) rotate(${rnd(-200,200)}deg)`,opacity:0}],{duration:rnd(350,650),easing:'cubic-bezier(.15,.7,.3,1)'});an.onfinish=()=>p.remove()}}
-function floatText(x,y,parts,cls=''){const fx=$('fx');const d=document.createElement('div');d.className='ft '+cls;d.innerHTML=parts.map(p=>`<span style="${p.c?'color:'+p.c:''}">${p.i?img(p.i):''}${p.t}</span>`).join('');d.style.left=clamp(x-28,6,Math.max(6,fx.clientWidth-96))+'px';d.style.top=clamp(y-10,6,Math.max(6,fx.clientHeight-50))+'px';fx.appendChild(d);d.animate([{transform:'translateY(0)',opacity:1},{transform:'translateY(-46px)',opacity:0}],{duration:900,easing:'ease-out'}).onfinish=()=>d.remove()}
+function floatText(x,y,parts,cls=''){const fx=$('fx');const d=document.createElement('div');d.className='ft '+cls;d.innerHTML=parts.map(p=>`<span style="${p.c?'color:'+p.c:''}">${p.i?img(p.i):''}${p.t}</span>`).join('');d.style.left=clamp(x-28,6,Math.max(6,fx.clientWidth-110))+'px';d.style.top=clamp(y-10,6,Math.max(6,fx.clientHeight-70))+'px';fx.appendChild(d);d.animate([{transform:'translateY(0)',opacity:1},{transform:'translateY(-46px)',opacity:0}],{duration:1000,easing:'ease-out'}).onfinish=()=>d.remove()}
 function shake(){$('field').animate([{transform:'translate(0,0)'},{transform:'translate(-6px,3px)'},{transform:'translate(5px,-4px)'},{transform:'translate(-3px,2px)'},{transform:'translate(0,0)'}],{duration:300});$('flash').animate([{opacity:.55},{opacity:0}],{duration:350})}
 
+/* ================= ЛОКАЦИИ ================= */
+function weights(){const L=curLoc(),lk=luckEff(),w=[];
+  const add=(t,x,min)=>{if(x>0&&S.level>=(min||1))w.push([t,x])};
+  add('gold',L.w.gold);add('coal',L.w.coal);add('iron',L.w.iron);add('redstone',L.w.redstone);
+  add('diamond',L.w.diamond?L.w.diamond+.4*lk:0);add('emerald',L.w.emerald?L.w.emerald+.15*lk:0);add('chest',L.w.chest?L.w.chest+.3*lk:0,2);
+  add('clock',L.w.clock);add('tnt',L.w.tnt);add('gTnt',L.w.gTnt,2);add('pTnt',L.w.pTnt,3);add('rTnt',L.w.rTnt,3);
+  for(const k in L.nat)add(k,L.nat[k]);return w}
+function pickType(){const w=weights();let t=w.reduce((a,e)=>a+e[1],0)*Math.random();for(const e of w){t-=e[1];if(t<=0)return e[0]}return 'gold'}
+function locCount(){const L=S.loc,lo=LM[L];S.locProg[L]=(S.locProg[L]||0)+1;
+  if(!S.locDone[L]&&S.locProg[L]>=lo.goal){S.locDone[L]=1;toast('Локация пройдена: '+lo.n+'!',lo.ic);sfx.level();const i=LOCS.indexOf(lo);
+    if(i===LOCS.length-1){S.won=1;toast('Вы прошли игру! Доступна перекрутка (вкладка «Ещё»)','star')}else setTimeout(()=>toast('Можно открыть: '+LOCS[i+1].n,LOCS[i+1].ic),700);
+    if(tab==='mine')buildLocInfo()}}
+function applyLoc(){$('field').style.backgroundImage=`url("${ICON['bg_'+S.loc]}")`;
+  let h='';if(S.loc==='forest')for(let i=0;i<18;i++)h+=`<img src="${ICON['fl'+ri(0,3)]}" style="left:${rnd(2,94).toFixed(1)}%;top:${rnd(2,92).toFixed(1)}%" alt="">`;$('deco').innerHTML=h;
+  $('locline').textContent=curLoc().n+' • '+Math.min(S.locProg[S.loc]||0,curLoc().goal)+'/'+curLoc().goal+(S.locDone[S.loc]?' (пройдена)':'')}
+function buildLocInfo(){let h='<h3>Локации</h3>';
+  LOCS.forEach((l,i)=>{const unl=S.locUnl[l.id],prev=i===0||S.locDone[LOCS[i-1].id],pr=Math.min(S.locProg[l.id]||0,l.goal);let btn;
+    if(S.loc===l.id)btn='<span class="tag">Здесь</span>';else if(unl)btn=`<button class="btn" data-loc="${l.id}">Перейти</button>`;else if(prev)btn=`<button class="btn gold" data-loc="${l.id}" ${S.coins>=l.cost?'':'disabled'}>${costHTML(l.cost,0)}</button>`;else btn='<span class="tag dim">Закрыто</span>';
+    h+=`<div class="locrow ${S.loc===l.id?'cur':''}">${img(l.ic)}<div class="tx"><b>${l.n}</b><small>${unl?`Прогресс: ${pr}/${l.goal}${S.locDone[l.id]?' ✓':''}`:(prev?'Можно открыть':'Сначала пройдите «'+LOCS[i-1].n+'»')}</small>${unl?`<div class="bar"><i style="width:${pr/l.goal*100}%"></i></div>`:''}</div>${btn}</div>`});
+  $('locinfo').innerHTML=h;applyLocLine()}
+function applyLocLine(){$('locline').textContent=curLoc().n+' • '+Math.min(S.locProg[S.loc]||0,curLoc().goal)+'/'+curLoc().goal+(S.locDone[S.loc]?' (пройдена)':'')}
+function travel(id){if(R){toast('Сначала завершите раунд');return}const lo=LM[id];if(!lo)return;
+  if(!S.locUnl[id]){const i=LOCS.indexOf(lo);if(i>0&&!S.locDone[LOCS[i-1].id]){toast('Сначала пройдите «'+LOCS[i-1].n+'»');return}if(S.coins<lo.cost){sfx.err();toast('Нужно '+fmt(lo.cost)+' монет');return}S.coins-=lo.cost;S.locUnl[id]=1;toast('Открыта локация: '+lo.n,lo.ic);sfx.level()}
+  S.loc=id;applyLoc();buildLocInfo();buildMineInfo();showStart();save()}
+$('locinfo').addEventListener('click',e=>{const b=e.target.closest('[data-loc]');if(!b||b.disabled)return;ac();travel(b.dataset.loc)});
+
+/* ================= ДОБЫЧА: расчёт наград ================= */
+function calcDrop(t,x){const rd=a=>Math.max(1,Math.round(a)),drop={},lk=x.lk,fv=x.fv,cm=x.cm,lv=x.lv,mo=mulOre(),mc=mulCoin();let coins=0;const xp=(BT[t]||{}).xp||0;
+  if(t==='gold'){drop.ore=rd((1+Math.random()*(1+lk*.6))*lv*fv*cm*mo);coins=rd(rnd(2,5)*lv*fv*cm*mc)}
+  else if(t==='coal'){drop.coal=rd((1+Math.random()*(1.5+lk*.4))*fv);coins=rd(mc)}
+  else if(t==='iron'){drop.iron=rd((1+Math.random()*(1+lk*.4))*fv*(1+S.stars*.1)*mo);coins=rd(2*mc)}
+  else if(t==='redstone'){drop.redstone=rd((2+Math.random()*(2+lk*.4))*fv);coins=rd(2*mc)}
+  else if(t==='diamond'){drop.diamond=1+(Math.random()<.1*lk?1:0);coins=Math.round(10*fv*cm*mc)}
+  else if(t==='emerald'){drop.emerald=1+(Math.random()<.08*lk?1:0);coins=Math.round(25*fv*cm*mc)}
+  else if(t==='chest'){coins=rd(rnd(40,110)*lv*fv*mc);drop.ingot=ri(1,2+Math.floor(lk/2));drop.iron=ri(1,3);drop.redstone=ri(1,4);
+    if(Math.random()<.2+.03*lk)drop.emerald=1;if(Math.random()<.15)drop.apple=1;if(S.level>=4&&Math.random()<.18)drop.gear=1;if(Math.random()<.03+.01*lk)drop.diamond=1}
+  else if(NB[t]){const nb=NB[t];if(nb.res)drop[nb.res]=rd(rnd(nb.amt[0],nb.amt[1]+.99)*fv*mo*(1+lk*.04));coins=rd(rnd(nb.coins[0],nb.coins[1]+.99)*lv*fv*cm*mc)}
+  return{drop,coins,xp}}
+function applyDrop(drop,coins){for(const k in drop)S[k]+=drop[k];addCoins(coins);S.stats.blocks++;if(drop.diamond)S.stats.diaGot+=drop.diamond;if(drop.chest)S.stats.chests++;locCount()}
+
 /* ================= РАУНД ================= */
-function pickType(){const r=Math.random(),dia=.025+.004*S.luck,tnt=.11,coal=.2;if(r<dia)return 'diamond';if(r<dia+tnt)return 'tnt';if(r<dia+tnt+coal)return 'coal';return 'gold'}
 function spawnBlock(){if(!R)return;const F=$('blocks'),W=F.clientWidth,H=F.clientHeight;if(W<80)return;const size=W<420?58:70;let x,y,ok=false;
   for(let i=0;i<14&&!ok;i++){x=rnd(6,W-size-6);y=rnd(6,H-size-14);ok=R.blocks.every(b=>Math.hypot(b.x-x,b.y-y)>size*.95)}if(!ok)return;
   const type=pickType(),d=BT[type],el=document.createElement('div');el.className='blk '+type;el.style.cssText=`left:${x}px;top:${y}px;width:${size}px;height:${size}px`;
-  el.innerHTML=`<img class="bimg" src="${ICON['b_'+type]}" draggable="false" alt=""><img class="crack" draggable="false" alt=""><div class="lt"><i></i></div>`;F.appendChild(el);
-  const b={type,hp:d.hp,max:d.hp,el,crack:el.querySelector('.crack'),bar:el.querySelector('.lt i'),life:d.life*rnd(.9,1.1),x,y,size,dead:false};b.lifeMax=b.life;el._b=b;R.blocks.push(b)}
+  el.innerHTML=`<div class="bimg bt-b_${type}"></div><div class="crack"></div><div class="lt"><i></i></div>`;F.appendChild(el);
+  const b={type,hp:d.hp,max:d.hp,el,crack:el.querySelector('.crack'),bar:el.querySelector('.lt i'),life:d.life*rnd(.9,1.1),x,y,size,dead:false,lastF:1};b.lifeMax=b.life;el._b=b;R.blocks.push(b)}
 function removeBlock(b,anim){b.dead=true;const i=R.blocks.indexOf(b);if(i>=0)R.blocks.splice(i,1);if(anim){b.el.classList.add('breaking');setTimeout(()=>b.el.remove(),200)}else b.el.remove()}
 function hitBlock(b,d,o){o=o||{};if(!R||b.dead)return;if(b.type==='tnt'){explode(b);return}
   const cx=o.px!=null?o.px:b.x+b.size/2,cy=o.py!=null?o.py:b.y+b.size/2;b.hp-=d;particles(cx,cy,b.type,4,1);
   if(b.hp<=0){breakBlock(b,o);return}
-  sfx.hit();const st=clamp(Math.ceil((1-b.hp/b.max)*3),1,3);b.crack.src=ICON['crack'+st];b.crack.style.display='block';
+  sfx.hit();const st=clamp(Math.ceil((1-b.hp/b.max)*3),1,3);b.crack.className='crack on bt-crack'+st;
   b.el.classList.remove('hit');void b.el.offsetWidth;b.el.classList.add('hit')}
-function breakBlock(b,o){removeBlock(b,true);const player=!!o.player;
-  if(player){R.combo++;R.comboT=1.6;R.maxCombo=Math.max(R.maxCombo,R.combo);S.stats.maxCombo=Math.max(S.stats.maxCombo,R.combo)}
-  const cm=1+Math.min(R.combo,60)*.02,fv=R.fever?2:1,lv=1+(S.level-1)*.02;let ore=0,coal=0,coins=0,dia=0;const xp=BT[b.type].xp;
-  if(b.type==='gold'){ore=Math.max(1,Math.round((1+Math.random()*(1+S.luck*.6))*lv*fv*cm));coins=Math.max(1,Math.round(rnd(2,5)*lv*fv*cm))}
-  else if(b.type==='coal'){coal=Math.max(1,Math.round((1+Math.random()*(1.5+S.luck*.4))*fv));coins=1}
-  else{dia=1+(Math.random()<.1*S.luck?1:0);coins=Math.round(10*fv*cm);S.stats.diaGot+=dia}
-  S.ore+=ore;S.coal+=coal;S.diamond+=dia;addCoins(coins);S.stats.blocks++;
-  const g=R.got;g.ore+=ore;g.coal+=coal;g.coins+=coins;g.diamond+=dia;g.blocks++;g.xp+=xp;
-  const cx=b.x+b.size/2,cy=b.y+b.size/2,parts=[];if(ore)parts.push({i:'ore',t:'+'+ore,c:'#ffe45a'});if(coal)parts.push({i:'coal',t:'+'+coal,c:'#ddd'});if(dia)parts.push({i:'diamond',t:'+'+dia,c:'#7ff'});if(coins)parts.push({i:'coin',t:'+'+coins,c:'#ffd93b'});
-  floatText(cx,cy,parts);particles(cx,cy,b.type,14,1);b.type==='diamond'?(sfx.coin(),sfx.level()):sfx.brk();if(navigator.vibrate)try{navigator.vibrate(8)}catch(e){}
+function breakBlock(b,o){removeBlock(b,true);const player=!!o.player,t=b.type,cx=b.x+b.size/2,cy=b.y+b.size/2;
+  if(player){R.combo++;R.comboT=1.6+tv('combo');R.maxCombo=Math.max(R.maxCombo,R.combo);S.stats.maxCombo=Math.max(S.stats.maxCombo,R.combo)}
+  const cm=1+Math.min(R.combo,60)*.02;
+  if(t==='gTnt'){const pen=tv('green')?0:2;if(pen){R.t-=pen;R.combo=0;R.comboT=0;sfx.err();floatText(cx,cy,[{t:'−'+pen+' с'}],'bad')}else floatText(cx,cy,[{t:'обезврежен',c:'#8fe35a'}]);particles(cx,cy,t,10,1);return}
+  if(t==='rTnt'||t==='pTnt'){S.stats.defused++;const c=Math.round((t==='rTnt'?30:15)*bonusMul()*mulCoin());addCoins(c);floatText(cx,cy,[{t:'обезврежен!',c:'#8fe35a'},{i:'coin',t:'+'+c,c:'#ffd93b'}]);particles(cx,cy,t,12,1);sfx.brk();addXP(5);return}
+  if(t==='clock'){const s=1+tv('clock');R.t+=s;R.total=Math.max(R.total,R.t);floatText(cx,cy,[{t:'+'+s+' с',c:'#7fd0ff'}]);particles(cx,cy,t,10,1);sfx.coin();addXP(2);return}
+  const {drop,coins,xp}=calcDrop(t,{cm,fv:R.fever,lk:luckEff(),lv:bonusMul()});applyDrop(drop,coins);
+  const g=R.got;g.coins+=coins;g.blocks++;g.xp+=xp;
+  for(const k in drop){if(k==='ore'||k==='coal'||k==='diamond')g[k]+=drop[k];else g.extra[k]=(g.extra[k]||0)+drop[k]}
+  const parts=Object.keys(drop).map(k=>({i:ITEM[k][1],t:'+'+drop[k]}));if(coins)parts.push({i:'coin',t:'+'+coins,c:'#ffd93b'});
+  floatText(cx,cy,parts);particles(cx,cy,t,t==='chest'?22:14,1);
+  if(t==='diamond'||t==='emerald'){sfx.coin();sfx.level()}else if(t==='chest'){sfx.coin();sfx.brk()}else sfx.brk();
+  if(navigator.vibrate)try{navigator.vibrate(8)}catch(e){}
   addXP(xp);if(player&&R.combo>0&&R.combo%10===0)floatText(cx,cy-24,[{t:'КОМБО '+R.combo+'!',c:'#8fe35a'}])}
 function explode(b){removeBlock(b,true);const cx=b.x+b.size/2,cy=b.y+b.size/2,pen=tntPen();R.t-=pen;R.combo=0;R.comboT=0;S.stats.tnt++;
   sfx.boom();particles(cx,cy,'tnt',26,1.6);floatText(cx,cy,[{t:'−'+pen+' с'}],'bad');shake();
-  R.blocks.slice().forEach(n=>{if(!n.dead&&Math.hypot(n.x-b.x,n.y-b.y)<b.size*2.2)hitBlock(n,dmg()*2,{})})}
-function helperHit(){const c=R.blocks.filter(b=>!b.dead&&b.type!=='tnt');if(!c.length)return;const b=c[Math.floor(Math.random()*c.length)];hitBlock(b,Math.max(1,Math.floor(dmg()*.5)),{})}
+  R.blocks.slice().forEach(n=>{if(!n.dead&&!isHaz(n.type)&&Math.hypot(n.x-b.x,n.y-b.y)<b.size*2.2)hitBlock(n,curDmg()*2,{})})}
+function expireBlock(b){
+  if(b.type==='rTnt'){const cx=b.x+b.size/2,cy=b.y+b.size/2;removeBlock(b,true);sfx.boom();shake();particles(cx,cy,'rTnt',30,1.8);
+    if(tv('shield')){R.t=Math.max(.1,R.t*.5);floatText(cx,cy,[{t:'КРАСНЫЙ TNT: −½ времени'}],'bad')}else{R.t=0;floatText(cx,cy,[{t:'КРАСНЫЙ TNT!'}],'bad')}}
+  else if(b.type==='pTnt'){const cx=b.x+b.size/2,cy=b.y+b.size/2,pen=Math.max(1,(3-S.tntShield)*(tv('defuse')?.5:1));removeBlock(b,true);R.t-=pen;R.combo=0;R.comboT=0;sfx.boom();shake();particles(cx,cy,'pTnt',18,1.4);floatText(cx,cy,[{t:'−'+(Math.round(pen*10)/10)+' с'}],'bad')}
+  else removeBlock(b,true)}
+function helperHit(){const c=R.blocks.filter(b=>!b.dead&&!isHaz(b.type)&&b.type!=='chest'&&b.type!=='clock');if(!c.length)return;const b=c[Math.floor(Math.random()*c.length)];hitBlock(b,Math.max(1,Math.floor(dmg()*.35)),{})}
+function useAbility(id){if(!R)return;const a=AB.find(x=>x.id===id);if(!a||!S[id]||R.cd[id]>0)return;R.cd[id]=a.cd*cdMul();
+  const W=$('blocks').clientWidth,H=$('blocks').clientHeight;
+  if(id==='abTnt'){sfx.boom();shake();R.blocks.slice().forEach(b=>{if(b.dead)return;if(isHaz(b.type)){removeBlock(b,true);S.stats.defused++;particles(b.x+b.size/2,b.y+b.size/2,b.type,10,1)}else hitBlock(b,curDmg()*3,{})});floatText(W/2,H/2,[{t:'ДИНАМИТ!',c:'#ff9a1f'}])}
+  else if(id==='abRage'){R.rageT=5;sfx.start();floatText(W/2,H/2,[{t:'ШКВАЛ! урон ×3',c:'#ffd93b'}])}
+  else{R.freezeT=6;sfx.level();floatText(W/2,H/2,[{t:'ВРЕМЯ СТОИТ',c:'#7fd0ff'}])}}
 function roundTick(dt){if(!R)return;R.t-=dt;if(R.t<=0){endRound();return}
   R.comboT-=dt;if(R.comboT<=0)R.combo=0;
-  R.spawnT-=dt;if(R.spawnT<=0){if(R.blocks.length<Math.min(12,4+S.spawn))spawnBlock();R.spawnT=Math.max(.25,.85-.06*S.spawn)*rnd(.7,1.3)}
-  R.blocks.slice().forEach(b=>{if(b.dead)return;b.life-=dt;b.bar.style.width=clamp(b.life/b.lifeMax*100,0,100)+'%';if(b.life<=0)removeBlock(b,true)});
-  if(S.helpers>0&&R){R.hAcc+=dt*S.helpers*.9;while(R.hAcc>=1&&R){R.hAcc-=1;helperHit()}}}
-function startRound(){ac();const ua=$('useApple');let fever=false;if(ua&&ua.checked&&S.apple>0){S.apple--;fever=true}
-  R={total:roundTime(),t:roundTime(),blocks:[],spawnT:.05,combo:0,comboT:0,maxCombo:0,hAcc:0,fever,got:{ore:0,coal:0,coins:0,diamond:0,blocks:0,xp:0}};
+  R.rageT-=dt;R.freezeT-=dt;for(const k in R.cd)R.cd[k]=Math.max(0,R.cd[k]-dt);
+  R.spawnT-=dt;if(R.spawnT<=0){if(R.blocks.length<Math.min(12,4+effSpawn()))spawnBlock();R.spawnT=Math.max(.25,.85-.06*effSpawn())*rnd(.7,1.3)*(R.rageT>0?.5:1)}
+  const fr=R.freezeT>0;
+  R.blocks.slice().forEach(b=>{if(b.dead)return;if(!fr)b.life-=dt;const f=clamp(b.life/b.lifeMax,0,1);if(Math.abs(f-b.lastF)>.03){b.lastF=f;b.bar.style.transform='scaleX('+f+')'}if(b.life<=0)expireBlock(b)});
+  if(R&&S.helpers>0){R.hAcc+=dt*S.helpers*.5;while(R.hAcc>=1&&R){R.hAcc-=1;helperHit()}}}
+function consList(){const l=CONS.filter(([k])=>S[k]>0);if(!l.length)return '';
+  return '<div class="uselist">'+l.map(([k,d])=>`<label><input type="checkbox" data-use="${k}" ${useSel[k]?'checked':''}>${img(ITEM[k][1])}<span>${ITEM[k][0]} (${S[k]})<small>${d}</small></span></label>`).join('')+'</div>'}
+function startRound(){ac();let fever=1,haste=false,luckP=false,extra=0;
+  const use=k=>useSel[k]&&S[k]>0;
+  if(use('apple')){S.apple--;fever=Math.max(fever,2)}
+  if(use('eApple')){S.eApple--;fever=3;extra+=10}
+  if(use('pHaste')){S.pHaste--;haste=true}
+  if(use('pLuck')){S.pLuck--;luckP=true}
+  if(use('pTime')){S.pTime--;extra+=10}
+  const tt=roundTime()+extra;
+  R={total:tt,t:tt,blocks:[],spawnT:.05,combo:0,comboT:0,maxCombo:0,hAcc:0,fever,haste,luckP,rageT:0,freezeT:0,cd:{abTnt:0,abRage:0,abFreeze:0},got:{ore:0,coal:0,coins:0,diamond:0,blocks:0,xp:0,extra:{}}};
   $('blocks').innerHTML='';$('fx').innerHTML='';$('overlay').classList.add('hidden');sfx.start();gkey=''}
-function endRound(){const g=R.got,mc=R.maxCombo,fv=R.fever;R=null;$('blocks').innerHTML='';S.stats.rounds++;S.stats.best=Math.max(S.stats.best,g.blocks);sfx.end();checkAch();save();showResult(g,mc,fv);buildMineInfo()}
+function endRound(){const g=R.got,mc=R.maxCombo,fv=R.fever;R=null;$('blocks').innerHTML='';S.stats.rounds++;S.stats.best=Math.max(S.stats.best,g.blocks);sfx.end();checkAch();save();lastG=g;
+  S.adCnt++;if(S.adCnt%GR.interstitialEvery===0){try{bridge().showInterstitial()}catch(e){}}
+  showResult(g,mc,fv);buildMineInfo();buildLocInfo()}
 function showStart(){const ov=$('overlay');ov.classList.remove('hidden');
-  ov.innerHTML=`<div class="ovp"><h2>Золотая лихорадка</h2><p>Раунд ${roundTime()} с. Бей золотые блоки, пока они не исчезли. Чем быстрее — тем больше комбо и награда!</p><p>Уголь нужен для печи, алмазы редки. <b style="color:#ff8a75">TNT не трогай:</b> минус ${tntPen()} с.</p>${S.apple>0?`<label class="chk"><input type="checkbox" id="useApple" checked> Съесть золотое яблоко: ×2 добыча (${S.apple} шт.)</label>`:''}<button class="btn gold big-btn" id="goBtn">НАЧАТЬ РАУНД</button></div>`;$('goBtn').onclick=startRound}
+  ov.innerHTML=`<div class="ovp"><h2>${curLoc().n}</h2><p>Раунд ${roundTime()} с. Бей блоки, пока они не исчезли. Комбо повышает награду!</p><p>Бомбы: <b style="color:#ffb06a">TNT</b> не бей, <b style="color:#7fe05a">зелёный</b> не трогай, <b style="color:#ff6a6a">красный</b> и <b style="color:#c89aff">фиолетовый</b> обезвреживай. Часы дают время.</p>${consList()}<button class="btn gold big-btn" id="goBtn">НАЧАТЬ РАУНД</button></div>`;$('goBtn').onclick=startRound}
 function showResult(g,mc,fv){const ov=$('overlay');ov.classList.remove('hidden');
-  ov.innerHTML=`<div class="ovp"><h2>Раунд окончен!</h2>${fv?'<p style="color:#ffd93b;font-weight:800">Золотая лихорадка ×2</p>':''}<div class="got"><div>${img('b_gold')}${g.blocks} блоков</div><div>${img('coin')}+${fmt(g.coins)}</div><div>${img('ore')}+${fmt(g.ore)}</div><div>${img('coal')}+${fmt(g.coal)}</div><div>${img('diamond')}+${g.diamond}</div><div>${img('star')}комбо ${mc}</div></div><p>Руду и уголь неси в печь, слитки продавай на рынке.</p>${S.apple>0?`<label class="chk"><input type="checkbox" id="useApple"> Съесть золотое яблоко (${S.apple} шт.)</label>`:''}<button class="btn gold big-btn" id="goBtn">ЕЩЁ РАУНД</button><div class="mt"><button class="btn blue" id="toFurn">В печь</button></div></div>`;
-  $('goBtn').onclick=startRound;$('toFurn').onclick=()=>setTab('furnace')}
-$('blocks').addEventListener('pointerdown',e=>{const el=e.target.closest('.blk');if(!el||!R||tab!=='mine')return;e.preventDefault();ac();const b=el._b;if(!b||b.dead)return;const rc=$('blocks').getBoundingClientRect();hitBlock(b,dmg(),{px:e.clientX-rc.left,py:e.clientY-rc.top,player:true})});
+  const ex=Object.keys(g.extra).map(k=>`<div>${img(ITEM[k][1])}+${fmt(g.extra[k])}</div>`).join('');
+  ov.innerHTML=`<div class="ovp"><h2>Раунд окончен!</h2>${fv>1?`<p style="color:#ffd93b;font-weight:800">Добыча ×${fv}</p>`:''}<div class="got"><div>${img('b_gold')}${g.blocks} блоков</div><div>${img('coin')}+${fmt(g.coins)}</div><div>${img('ore')}+${fmt(g.ore)}</div><div>${img('coal')}+${fmt(g.coal)}</div><div>${img('diamond')}+${g.diamond}</div><div>${img('star')}комбо ${mc}</div>${ex}</div>${consList()}<button class="btn gold big-btn" id="goBtn">ЕЩЁ РАУНД</button><div class="mt col"><button class="btn em" id="adBtn">Реклама: ×2 награда раунда</button><button class="btn blue" id="toFurn">В печь и на верстак</button></div></div>`;
+  $('goBtn').onclick=startRound;$('toFurn').onclick=()=>setTab('furnace');$('adBtn').onclick=watchDouble}
+function watchDouble(){if(!lastG||lastG.done)return;bridge().showRewardedAd('double_reward',ok=>{if(!ok){toast('Реклама недоступна');return}const g=lastG;if(g.done)return;g.done=true;
+  for(const k of ['ore','coal','diamond'])S[k]+=g[k];for(const k in g.extra)S[k]+=g.extra[k];addCoins(g.coins);toast('Награда раунда удвоена!','coin');sfx.coin();const b=$('adBtn');if(b)b.classList.add('hidden')})}
+$('overlay').addEventListener('change',e=>{const c=e.target.closest('[data-use]');if(c)useSel[c.dataset.use]=c.checked});
+$('blocks').addEventListener('pointerdown',e=>{const el=e.target.closest('.blk');if(!el||!R||tab!=='mine')return;e.preventDefault();ac();const b=el._b;if(!b||b.dead)return;const rc=$('blocks').getBoundingClientRect();hitBlock(b,curDmg(),{px:e.clientX-rc.left,py:e.clientY-rc.top,player:true})});
+$('abil').addEventListener('pointerdown',e=>{const b=e.target.closest('[data-ab]');if(!b||!R||tab!=='mine')return;e.preventDefault();ac();useAbility(b.dataset.ab)});
+let abBtns=[];
+function buildAbil(){const own=AB.filter(a=>S[a.id]);$('abil').innerHTML=own.map(a=>`<button class="abtn cd" data-ab="${a.id}">${img(a.ic)}<span>${a.n}</span><i>—</i></button>`).join('');$('abil').classList.toggle('hidden',!own.length);abBtns=[...document.querySelectorAll('#abil .abtn')]}
 
-let gkey='';
+let gkey='',tmTxt='',tbW='',cmbTxt='';
 function updateHUD(){if(tab!=='mine')return;
-  if(R){$('tm').textContent=Math.max(0,R.t).toFixed(1);$('tbar').style.width=clamp(R.t/R.total*100,0,100)+'%';const cm=1+Math.min(R.combo,60)*.02;
-    $('cmb').textContent=(R.fever?'ЛИХОРАДКА ×2   ':'')+(R.combo>1?`КОМБО ${R.combo} ×${cm.toFixed(2)}`:'');
-    const g=R.got,k=`${g.ore}|${g.coal}|${g.coins}|${g.diamond}`;if(k!==gkey){gkey=k;$('gotrow').innerHTML=`<span>${img('ore')}${g.ore}</span><span>${img('coal')}${g.coal}</span><span>${img('coin')}${g.coins}</span><span>${img('diamond')}${g.diamond}</span>`}}
-  else{$('tm').textContent=roundTime().toFixed(1);$('tbar').style.width='100%';$('cmb').textContent='';if(gkey!=='idle'){gkey='idle';$('gotrow').innerHTML='<span class="dim">Награда за раунд появится здесь</span>'}}}
-function buildMineInfo(){const p=PICKS[S.pick];
-  $('mineinfo').innerHTML=`<div class="row" style="padding-top:0">${img('pick'+S.pick,'ic')}<div class="tx"><b>${p.n}</b><small>Урон ${dmg()} • помощников: ${S.helpers} • вагонетка: +${(S.cart*.3).toFixed(1)} руды/с</small></div></div>
-  <div class="lgrid"><div class="lg">${img('b_gold')}<span><b>Золото</b><small>руда и монеты</small></span></div><div class="lg">${img('b_coal')}<span><b>Уголь</b><small>топливо для печи</small></span></div><div class="lg">${img('b_diamond')}<span><b>Алмаз</b><small>редкий, дорогой</small></span></div><div class="lg">${img('b_tnt')}<span><b>TNT</b><small>−${tntPen()} с, лучше не бить</small></span></div></div>`}
+  if(R){const t1=Math.max(0,R.t).toFixed(1);if(t1!==tmTxt){tmTxt=t1;$('tm').textContent=t1}const w=clamp(R.t/R.total*100,0,100).toFixed(1)+'%';if(w!==tbW){tbW=w;$('tbar').style.width=w}
+    const cm=1+Math.min(R.combo,60)*.02;const ct=(R.fever>1?'ДОБЫЧА ×'+R.fever+'  ':'')+(R.rageT>0?'ШКВАЛ ':'')+(R.freezeT>0?'ХРОНО ':'')+(R.combo>1?`КОМБО ${R.combo} ×${cm.toFixed(2)}`:'');if(ct!==cmbTxt){cmbTxt=ct;$('cmb').textContent=ct}
+    const g=R.got,k=`${g.ore}|${g.coal}|${g.coins}|${g.diamond}`;if(k!==gkey){gkey=k;$('gotrow').innerHTML=`<span>${img('ore')}${g.ore}</span><span>${img('coal')}${g.coal}</span><span>${img('coin')}${g.coins}</span><span>${img('diamond')}${g.diamond}</span>`}
+    abBtns.forEach(b=>{const cd=R.cd[b.dataset.ab]||0;b.classList.toggle('cd',cd>0);const tx=cd>0?Math.ceil(cd)+'с':'ГОТОВ';if(b.lastElementChild.textContent!==tx)b.lastElementChild.textContent=tx})}
+  else{const t1=roundTime().toFixed(1);if(t1!==tmTxt){tmTxt=t1;$('tm').textContent=t1}$('tbar').style.width='100%';tbW='';if(cmbTxt){cmbTxt='';$('cmb').textContent=''}if(gkey!=='idle'){gkey='idle';$('gotrow').innerHTML='<span class="dim">Награда за раунд появится здесь</span>';abBtns.forEach(b=>{b.classList.add('cd');b.lastElementChild.textContent='—'})}}}
+function buildMineInfo(){const p=PICKS[S.pick],types=weights().map(e=>e[0]);
+  $('mineinfo').innerHTML=`<div class="row" style="padding-top:0">${img('pick'+S.pick,'ic')}<div class="tx"><b>${p.n}</b><small>Урон ${dmg()} • помощников: ${S.helpers} • вагонетка: +${(S.cart*.3).toFixed(1)} руды/с${S.autoM?' • автодобытчик '+S.autoM+' ур.':''}${S.merch?' • перекупщик '+S.merch+' ур.':''}</small></div></div>
+  <div class="lgrid">${types.map(t=>`<div class="lg">${img('b_'+t)}<span><b>${BNAME[t][0]}</b><small>${BNAME[t][1]}</small></span></div>`).join('')}</div>`;buildAbil()}
 
-/* ================= ПАССИВ: печь и вагонетка ================= */
+/* ================= АВТОДОБЫЧА И ПЕРЕКУПЩИК ================= */
+const AUTO={n:0,coins:0,items:{},last:0};
+function autoRun(){const sp=Math.max(.25,.85-.06*effSpawn());const n=clamp(Math.floor(roundTime()/sp*autoEff()),1,60);
+  for(let i=0;i<n;i++){const t=pickType();if(isHaz(t)||t==='clock')continue;const {drop,coins,xp}=calcDrop(t,{cm:1,fv:1,lk:S.luck,lv:bonusMul()});applyDrop(drop,coins);addXP(xp);
+    AUTO.n++;AUTO.coins+=coins;for(const k in drop)AUTO.items[k]=(AUTO.items[k]||0)+drop[k]}}
+function flushAuto(force){if(AUTO.n<=0)return;const now=Date.now();if(!force&&now-AUTO.last<20000)return;AUTO.last=now;
+  const top=Object.keys(AUTO.items).slice(0,4).map(k=>'+'+fmt(AUTO.items[k])+' '+ITEM[k][0].toLowerCase()).join(', ');
+  toast(`Автодобытчик: ${AUTO.n} блоков, +${fmt(AUTO.coins)} монет${top?', '+top:''}`,'villager3');AUTO.n=0;AUTO.coins=0;AUTO.items={}}
+function merchTick(){const L=S.merch;if(L<1)return;let gain=0,spent=0;const vol=6+4*L,bonus=1+.03*(L-1);
+  GOODS.forEach(g=>{if(!g.raw)return;if(g.loc&&!S.locUnl[g.loc])return;const p=price(g.id),ratio=p/g.base,own=S[g.id],res=g.res||20;
+    if(ratio>=1.10&&own>res){const n=Math.min(own-res,vol);const c=Math.floor(n*sellP(g.id)*bonus);S[g.id]-=n;addCoins(c);gain+=c;S.stats.sold+=n}
+    else if(ratio<=.82&&['ore','coal','iron','redstone'].includes(g.id)){const n=Math.min(Math.floor(vol*.7),Math.floor(S.coins*.05/buyP(g.id)));if(n>0){const c=n*buyP(g.id);S.coins-=c;S[g.id]+=n;spent+=c}}});
+  S.merchProfit+=gain-spent;if(gain>=500)toast('Перекупщик: +'+fmt(gain)+' монет','villager2')}
+
+/* ================= ПАССИВ: печи, вагонетка, автодобытчик ================= */
 function passive(dt){
   if(S.cart>0){S.cartAcc+=S.cart*.3*dt;const n=Math.floor(S.cartAcc);if(n>0){S.cartAcc-=n;S.ore+=n}}
-  if(S.queue>0){S.prog+=dt*(1+S.slots)/smeltTime();while(S.prog>=1&&S.queue>0){S.prog-=1;S.queue--;S.ingot++;S.stats.ingots++}if(S.queue<=0){S.queue=0;S.prog=0}}else S.prog=0}
+  const sp=slotsN()/smeltTime();
+  if(S.queue>0){S.prog+=dt*sp;while(S.prog>=1&&S.queue>0){S.prog-=1;S.queue--;S.ingot++;S.stats.ingots++}if(S.queue<=0){S.queue=0;S.prog=0}}else S.prog=0;
+  if(S.qI>0){S.progI+=dt*sp;while(S.progI>=1&&S.qI>0){S.progI-=1;S.qI--;S.ironIng++}if(S.qI<=0){S.qI=0;S.progI=0}}else S.progI=0;
+  if(S.autoM>0){S.autoT+=dt;let c=0;const cy=autoCycle();while(S.autoT>=cy&&c<100){S.autoT-=cy;autoRun();c++}if(c>=100)S.autoT=0}}
 let lastWall=Date.now();
-function wallTick(){const n=Date.now();const dt=Math.min((n-lastWall)/1000,8*3600);lastWall=n;if(dt>0)passive(dt);if(tab==='furnace')updateFurnace();if(tab==='shop')refreshAfford()}
+function wallTick(){const n=Date.now();const dt=Math.min((n-lastWall)/1000,8*3600);lastWall=n;if(dt>0)passive(dt);flushAuto(false);if(tab==='furnace')updateFurnace();if(tab==='shop')refreshAfford();if(tab==='tree')refreshTree()}
 
-/* ================= ПЕЧЬ ================= */
+/* ================= ПЕЧЬ И ВЕРСТАК ================= */
+const canCraft=(r,n)=>Object.keys(r.cost).every(k=>S[k]>=r.cost[k]*n);
+const maxCraft=r=>Math.min(...Object.keys(r.cost).map(k=>Math.floor(S[k]/r.cost[k])));
+function recipeRow(r){const owned=r.once&&S[r.out]>0;
+  const costs=Object.keys(r.cost).map(k=>`<span class="ci" data-item="${k}" data-n="${r.cost[k]}">${img(ITEM[k][1])}<b>0</b>/${r.cost[k]}</span>`).join('');
+  const btn=owned?'<span class="tag">Создано</span>':`<div class="col"><button class="btn" data-a="craft" data-id="${r.id}" data-all="0">Создать</button>${r.many?`<button class="btn gold" data-a="craft" data-id="${r.id}" data-all="1">Макс</button>`:''}</div>`;
+  return `<div class="row">${img(r.ic,'ic')}<div class="tx"><b>${r.n}</b><small>${r.ds}${r.once?'':` • в наличии: <span data-own="${r.out}">0</span>`}</small><div class="costs">${costs}</div></div>${btn}</div>`}
 function buildFurnace(){
-  $('tab-furnace').innerHTML=`<div class="card"><h3>Печь</h3><div class="furn" id="furn"><img class="base" src="${ICON.furnace}" alt=""><img class="flame" src="${ICON.fire}" alt=""></div>
+  let h=`<div class="card"><h3>Печь (золото)</h3><div class="furn" id="furn"><img class="base" src="${ICON.furnace}" alt=""><img class="flame" src="${ICON.fire}" alt=""></div>
   <div class="center small" id="f-info"></div><div class="bar big mt"><i id="f-bar"></i></div><div class="small dim center mt">1 золотая руда + 1 уголь = 1 слиток</div>
-  <div class="btnrow mt"><button class="btn" data-a="load" data-n="1">В печь ×1</button><button class="btn" data-a="load" data-n="10">×10</button><button class="btn gold" data-a="load" data-n="max">Макс</button></div></div>
-  <div class="card"><h3>Верстак</h3>
-  <div class="row">${img('gblock','ic')}<div class="tx"><b>Золотой блок</b><small>9 слитков. Продаётся дороже, чем 9 слитков по отдельности. В наличии: <span id="c-gblock">0</span></small></div><div style="display:flex;flex-direction:column;gap:4px"><button class="btn" data-a="craft" data-id="gblock" data-all="0">×1</button><button class="btn gold" data-a="craft" data-id="gblock" data-all="1">Макс</button></div></div>
-  <div class="row">${img('apple','ic')}<div class="tx"><b>Золотое яблоко</b><small>8 слитков. Съешь перед раундом: ×2 к добыче. В наличии: <span id="c-apple">0</span></small></div><button class="btn" data-a="craft" data-id="apple" data-all="0">Создать</button></div></div>`;
-  updateFurnace()}
-function updateFurnace(){const f=$('f-info');if(!f)return;const mx=Math.min(S.ore,S.coal),slots=1+S.slots;
-  f.innerHTML=`В очереди: <b style="color:#ffd93b">${S.queue}</b> • печей: ${slots} • ${smeltTime().toFixed(1)} с на слиток<br>Руда: ${fmt(S.ore)} • Уголь: ${fmt(S.coal)} • Слитки: ${fmt(S.ingot)}`;
-  $('f-bar').style.width=(S.queue>0?clamp(S.prog,0,1)*100:0)+'%';$('furn').classList.toggle('on',S.queue>0);
+  <div class="btnrow mt"><button class="btn" data-a="load" data-n="1">В печь ×1</button><button class="btn" data-a="load" data-n="10">×10</button><button class="btn gold" data-a="load" data-n="max">Макс</button></div></div>`;
+  h+=`<div class="card"><h3>Доменная печь (железо)</h3><div class="center small" id="i-info"></div><div class="bar big mt"><i id="i-bar"></i></div><div class="small dim center mt">1 железная руда + 1 уголь = 1 железный слиток</div>
+  <div class="btnrow mt"><button class="btn" data-a="loadI" data-n="1">В печь ×1</button><button class="btn" data-a="loadI" data-n="10">×10</button><button class="btn gold" data-a="loadI" data-n="max">Макс</button></div></div>`;
+  h+=`<div class="card"><h3>Склад</h3><div class="invg">${INV.map(k=>`<div title="${ITEM[k][0]}">${img(ITEM[k][1])}<b id="inv-${k}">0</b></div>`).join('')}</div></div>`;
+  ['Материалы','Зелья и еда','Инструменты','Конвертер'].forEach(g=>{h+=`<div class="card"><h3>Верстак: ${g}</h3>`+RECIPES.filter(r=>r.g===g).map(recipeRow).join('')+'</div>'});
+  $('tab-furnace').innerHTML=h;updateFurnace()}
+function updateFurnace(){const f=$('f-info');if(!f)return;const slots=slotsN(),tt=smeltTime().toFixed(1);
+  f.innerHTML=`В очереди: <b style="color:#ffd93b">${S.queue}</b> • печей: ${slots} • ${tt} с на слиток<br>Руда: ${fmt(S.ore)} • Уголь: ${fmt(S.coal)} • Слитки: ${fmt(S.ingot)}`;
+  $('f-bar').style.width=(S.queue>0?clamp(S.prog,0,1)*100:0)+'%';$('furn').classList.toggle('on',S.queue>0||S.qI>0);
+  const ii=$('i-info');if(ii){ii.innerHTML=`В очереди: <b style="color:#ffd93b">${S.qI}</b> • ${tt} с на слиток<br>Железная руда: ${fmt(S.iron)} • Уголь: ${fmt(S.coal)} • Железные слитки: ${fmt(S.ironIng)}`;$('i-bar').style.width=(S.qI>0?clamp(S.progI,0,1)*100:0)+'%'}
+  const mx=Math.min(S.ore,S.coal),mxI=Math.min(S.iron,S.coal);
   document.querySelectorAll('#tab-furnace [data-a="load"]').forEach(b=>{b.disabled=mx<1});
-  const cb=document.querySelector('#tab-furnace [data-a="craft"][data-id="gblock"][data-all="0"]'),ca=document.querySelector('#tab-furnace [data-a="craft"][data-id="gblock"][data-all="1"]'),cp=document.querySelector('#tab-furnace [data-a="craft"][data-id="apple"]');
-  if(cb)cb.disabled=S.ingot<9;if(ca){ca.disabled=S.ingot<9;ca.textContent=S.ingot>=9?'Макс ('+Math.floor(S.ingot/9)+')':'Макс'}if(cp)cp.disabled=S.ingot<8;
-  $('c-gblock').textContent=S.gblock;$('c-apple').textContent=S.apple}
+  document.querySelectorAll('#tab-furnace [data-a="loadI"]').forEach(b=>{b.disabled=mxI<1});
+  INV.forEach(k=>{const e=$('inv-'+k);if(e)e.textContent=fmt(S[k])});
+  document.querySelectorAll('#tab-furnace .ci').forEach(c=>{const k=c.dataset.item;c.classList.toggle('no',S[k]<+c.dataset.n);c.querySelector('b').textContent=fmt(S[k])});
+  document.querySelectorAll('#tab-furnace [data-own]').forEach(e=>{e.textContent=fmt(S[e.dataset.own])});
+  document.querySelectorAll('#tab-furnace [data-a="craft"]').forEach(b=>{const r=RECIPES.find(x=>x.id===b.dataset.id);if(!r)return;const m=maxCraft(r);b.disabled=m<1;if(b.dataset.all==='1')b.textContent=m>=1?'Макс ('+m+')':'Макс'})}
+function craft(id,all){const r=RECIPES.find(x=>x.id===id);if(!r)return;let n=all?maxCraft(r):1;if(r.once)n=1;if(r.once&&S[r.out]>0)return;if(n<1||!canCraft(r,n)){sfx.err();return}
+  for(const k in r.cost)S[k]-=r.cost[k]*n;S[r.out]+=r.amt*n;S.stats.crafted+=n;if(r.out==='apple')S.stats.apples+=r.amt*n;
+  sfx.buy();toast('Создано: '+r.n+(n>1?' ×'+n:''),r.ic);checkAch();if(r.once){buildMineInfo()}}
 $('tab-furnace').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b||b.disabled)return;ac();const a=b.dataset.a;
-  if(a==='load'){const mx=Math.min(S.ore,S.coal),k=b.dataset.n==='max'?mx:Math.min(+b.dataset.n,mx);if(k<=0){sfx.err();return}S.ore-=k;S.coal-=k;S.queue+=k;sfx.buy()}
-  else if(a==='craft'){if(b.dataset.id==='gblock'){const n=b.dataset.all==='1'?Math.floor(S.ingot/9):(S.ingot>=9?1:0);if(n<=0)return;S.ingot-=9*n;S.gblock+=n}else{if(S.ingot<8)return;S.ingot-=8;S.apple++;S.stats.apples++}sfx.buy();checkAch()}
-  updateFurnace()});
+  if(a==='load'||a==='loadI'){const src=a==='load'?'ore':'iron',mx=Math.min(S[src],S.coal),k=b.dataset.n==='max'?mx:Math.min(+b.dataset.n,mx);if(k<=0){sfx.err();return}S[src]-=k;S.coal-=k;if(a==='load')S.queue+=k;else S.qI+=k;sfx.buy();updateFurnace()}
+  else if(a==='craft'){craft(b.dataset.id,b.dataset.all==='1');buildFurnace()}});
 
 /* ================= РЫНОК ================= */
 const evMult=id=>EV&&EV.mult[id]?EV.mult[id]:1;
 const price=id=>Math.max(1,Math.round(GM[id].base*S.mk.m[id]*evMult(id)));
-const sellP=id=>Math.max(1,Math.floor(price(id)*(1+.05*S.trade)));
-const buyP=id=>Math.ceil(price(id)*1.25);
+const sellP=id=>Math.max(1,Math.floor(price(id)*(1+.05*S.trade+tv('sell'))));
+const buyP=id=>Math.ceil(price(id)*(1.25-tv('spread')));
 function priceTick(){GOODS.forEach(g=>{let m=S.mk.m[g.id];m+=(1-m)*.1+(Math.random()+Math.random()-1)*.14;S.mk.m[g.id]=clamp(m,.55,1.7)});
   if(EV&&Date.now()>EV.until)EV=null;else if(!EV&&Math.random()<.09){const e=EVENTS[ri(0,EVENTS.length-1)];EV={t:e.t,mult:e.mult,until:Date.now()+rnd(45000,70000)};toast(e.t,'coin')}
-  GOODS.forEach(g=>{const h=S.mk.h[g.id];h.push(price(g.id));if(h.length>24)h.shift()});if(tab==='market')updateMarket()}
+  GOODS.forEach(g=>{const h=S.mk.h[g.id];h.push(price(g.id));if(h.length>24)h.shift()});merchTick();if(tab==='market')updateMarket()}
+const visGoods=()=>GOODS.filter(g=>!g.loc||S.locUnl[g.loc]||S[g.id]>0);
 function buildMarket(){
   let h='<div id="evbanner" class="banner hidden"></div>';
-  GOODS.forEach(g=>{h+=`<div class="card"><div class="mtop">${img(g.id,'ic')}<div class="mname"><b>${g.n}</b><small>В наличии: <span id="own-${g.id}">0</span></small></div><svg class="spark" id="sp-${g.id}" viewBox="0 0 78 30" preserveAspectRatio="none"></svg><div class="mprice"><b id="pr-${g.id}">0</b><small id="dl-${g.id}"></small></div></div>
+  visGoods().forEach(g=>{h+=`<div class="card"><div class="mtop">${img(ITEM[g.id][1],'ic')}<div class="mname"><b>${g.n}</b><small>В наличии: <span id="own-${g.id}">0</span></small></div><svg class="spark" id="sp-${g.id}" viewBox="0 0 78 30" preserveAspectRatio="none"></svg><div class="mprice"><b id="pr-${g.id}">0</b><small id="dl-${g.id}"></small></div></div>
   <div class="mbtns"><button class="btn" data-a="buy" data-id="${g.id}" data-n="1">Купить ×1<small id="bp1-${g.id}"></small></button><button class="btn" data-a="buy" data-id="${g.id}" data-n="10">Купить ×10<small id="bp10-${g.id}"></small></button><button class="btn gold" data-a="sell" data-id="${g.id}" data-all="0">Продать ×1<small id="sp1-${g.id}"></small></button><button class="btn gold" data-a="sell" data-id="${g.id}" data-all="1">Продать всё<small id="spa-${g.id}"></small></button></div></div>`});
   $('tab-market').innerHTML=h;updateMarket()}
 function updateMarket(){const eb=$('evbanner');if(!eb)return;if(EV){eb.classList.remove('hidden');eb.textContent='Событие: '+EV.t}else eb.classList.add('hidden');
-  GOODS.forEach(g=>{const id=g.id,p=price(id),s=sellP(id),b=buyP(id),own=S[id],dl=Math.round((p/g.base-1)*100),hist=S.mk.h[id];
-    $('own-'+id).textContent=fmt(own);$('pr-'+id).textContent=s;const d=$('dl-'+id);d.textContent=(dl>=0?'+':'')+dl+'%';d.className=dl>=0?'up':'dn';
+  visGoods().forEach(g=>{const id=g.id,p=price(id),s=sellP(id),b=buyP(id),own=S[id],dl=Math.round((p/g.base-1)*100),hist=S.mk.h[id];
+    const o=$('own-'+id);if(!o)return;o.textContent=fmt(own);$('pr-'+id).textContent=s;const d=$('dl-'+id);d.textContent=(dl>=0?'+':'')+dl+'%';d.className=dl>=0?'up':'dn';
     $('bp1-'+id).textContent='за '+fmt(b);$('bp10-'+id).textContent='за '+fmt(b*10);$('sp1-'+id).textContent='+'+fmt(s);$('spa-'+id).textContent='+'+fmt(s*own);
     const mn=Math.min(...hist),mx=Math.max(...hist),rg=Math.max(1,mx-mn);const pts=hist.map((v,i)=>`${(i/(hist.length-1)*76+1).toFixed(1)},${(27-(v-mn)/rg*24).toFixed(1)}`).join(' ');
     $('sp-'+id).innerHTML=`<polyline points="${pts}" fill="none" stroke="${dl>=0?'#7fe05a':'#ff7d6a'}" stroke-width="2" vector-effect="non-scaling-stroke"/>`;
     document.querySelector(`[data-a="buy"][data-id="${id}"][data-n="1"]`).disabled=S.coins<b;document.querySelector(`[data-a="buy"][data-id="${id}"][data-n="10"]`).disabled=S.coins<b*10;
     document.querySelector(`[data-a="sell"][data-id="${id}"][data-all="0"]`).disabled=own<1;document.querySelector(`[data-a="sell"][data-id="${id}"][data-all="1"]`).disabled=own<1})}
 $('tab-market').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b||b.disabled)return;ac();const id=b.dataset.id;
-  if(b.dataset.a==='buy'){const n=+b.dataset.n,cost=n*buyP(id);if(S.coins<cost){sfx.err();return}S.coins-=cost;S[id]+=n;sfx.buy();bump(id==='gblock'?'coins':id)}
+  if(b.dataset.a==='buy'){const n=+b.dataset.n,cost=n*buyP(id);if(S.coins<cost){sfx.err();return}S.coins-=cost;S[id]+=n;sfx.buy();bump(id)}
   else{const own=S[id],n=b.dataset.all==='1'?own:Math.min(1,own);if(n<=0)return;const gain=n*sellP(id);S[id]-=n;addCoins(gain);S.stats.sold+=n;sfx.coin();bump('coins');toast('Продано: +'+fmt(gain)+' монет','coin')}
   updateMarket();checkAch()});
 
 /* ================= ЛАВКА ================= */
 const costHTML=(c,d)=>`<img src="${ICON.coin}" alt="">${fmt(c)}`+(d?` <img src="${ICON.diamond}" alt="">${d}`:'');
-function buildShop(){let h='<div class="card"><h3>Кирки</h3>';
+function buildShop(){let h='<div class="card"><h3>Жители</h3>';
+  VILL.forEach(v=>{const l=S[v.id],cs=v.cost(l);let r;
+    if(l>=v.max)r='<span class="tag">МАКС</span>';
+    else if(l===0)r=`<div class="col"><button class="btn" data-a="vill" data-id="${v.id}" data-pay="coins" data-c="${cs.c}" data-d="0">${costHTML(cs.c,0)}</button><button class="btn gold" data-a="vill" data-id="${v.id}" data-pay="dia" data-c="0" data-d="${cs.d}"><img src="${ICON.diamond}" alt="">${cs.d}</button></div>`;
+    else r=`<button class="btn" data-a="vill" data-id="${v.id}" data-pay="coins" data-c="${cs.c}" data-d="0">${costHTML(cs.c,0)}</button>`;
+    const pips=Array.from({length:v.max},(_,k)=>`<i class="${k<l?'on':''}"></i>`).join('');
+    h+=`<div class="row">${img(v.ic,'ic')}<div class="tx"><b>${v.n}${l?' ур. '+l:''}</b><small>${v.ds(l)}${v.id==='merch'&&l?` • прибыль: ${fmt(Math.max(0,S.merchProfit))}`:''}</small><div class="pips">${pips}</div></div>${r}</div>`});
+  h+='</div><div class="card"><h3>Кирки</h3>';
   PICKS.forEach((p,i)=>{let r;if(i<S.pick)r='<span class="tag">Есть</span>';else if(i===S.pick)r='<span class="tag">В руках</span>';else if(i===S.pick+1)r=`<button class="btn" data-a="pick" data-c="${p.c}" data-d="${p.dia}">${costHTML(p.c,p.dia)}</button>`;else r='<span class="tag dim">Закрыто</span>';
     h+=`<div class="row ${i===S.pick?'cur':''}">${img('pick'+i,'ic')}<div class="tx"><b>${p.n}</b><small>Урон ${p.d}</small></div>${r}</div>`});
   h+='</div><div class="card"><h3>Улучшения</h3>';
@@ -459,45 +831,79 @@ function buildShop(){let h='<div class="card"><h3>Кирки</h3>';
 function refreshAfford(){document.querySelectorAll('#tab-shop [data-c]').forEach(b=>{b.disabled=!(S.coins>=+b.dataset.c&&S.diamond>=+b.dataset.d)})}
 $('tab-shop').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b||b.disabled)return;ac();const c=+b.dataset.c,d=+b.dataset.d;if(S.coins<c||S.diamond<d){sfx.err();return}
   if(b.dataset.a==='pick'){S.coins-=c;S.diamond-=d;S.pick++;toast(PICKS[S.pick].n+' куплена!','pick'+S.pick)}
+  else if(b.dataset.a==='vill'){const v=VILL.find(x=>x.id===b.dataset.id);if(!v||S[v.id]>=v.max)return;S.coins-=c;S.diamond-=d;S[v.id]++;toast(v.n+' нанят: ур. '+S[v.id],v.ic)}
   else{const u=UPG.find(x=>x.id===b.dataset.id);if(!u||S[u.id]>=u.max)return;S.coins-=c;S.diamond-=d;S[u.id]++;toast(u.n+': ур. '+S[u.id],u.ic)}
   sfx.level();buildShop();buildMineInfo();checkAch();save()});
 
-/* ================= ПРОГРЕСС ================= */
+/* ================= ДРЕВО НАВЫКОВ ================= */
+const nodeOpen=n=>n.req.every(r=>S.tree[r]);
+const haveOf=k=>k==='coins'?S.coins:S[k];
+const nodeAfford=n=>Object.keys(n.cost).every(k=>haveOf(k)>=n.cost[k]);
+const BRICON={'Добыча':'pick3','Время':'clock','Торговля':'coin','Механика':'gear','Выживание':'b_tnt'};
+function buildTree(){const br=[...new Set(TREE.map(n=>n.b))];let h=`<div class="card"><div class="small dim">Навыки изучаются один раз. Узел открывается, когда изучены все нужные предыдущие. Изучено: ${Object.keys(S.tree).length}/${TREE.length}</div></div>`;
+  br.forEach(b=>{h+=`<div class="card"><h3>${b}</h3>`;TREE.filter(n=>n.b===b).forEach(n=>{const own=S.tree[n.id],open=nodeOpen(n);
+    const costs=Object.keys(n.cost).map(k=>`<span class="ci" data-k="${k}" data-n="${n.cost[k]}">${img(k==='coins'?'coin':ITEM[k][1])}<b>${fmt(n.cost[k])}</b></span>`).join('');
+    h+=`<div class="node ${own?'own':open?'':'lock'}">${img(n.ic,'ic')}<div class="tx"><b>${n.n}</b><small>${n.ds}</small>${!own&&!open?`<small>Нужно: ${n.req.filter(r=>!S.tree[r]).map(r=>TM[r].n).join(', ')}</small>`:''}${own?'':`<div class="costs">${costs}</div>`}</div>${own?'<span class="tag">Изучено</span>':`<button class="btn" data-a="tnode" data-id="${n.id}">Изучить</button>`}</div>`});h+='</div>'});
+  $('tab-tree').innerHTML=h;refreshTree()}
+function refreshTree(){document.querySelectorAll('#tab-tree .ci').forEach(c=>{c.classList.toggle('no',haveOf(c.dataset.k)<+c.dataset.n)});
+  document.querySelectorAll('#tab-tree [data-a="tnode"]').forEach(b=>{const n=TM[b.dataset.id];b.disabled=!(nodeOpen(n)&&nodeAfford(n))})}
+function buyNode(id){const n=TM[id];if(!n||S.tree[id]||!nodeOpen(n)||!nodeAfford(n)){sfx.err();return false}
+  for(const k in n.cost){if(k==='coins')S.coins-=n.cost[k];else S[k]-=n.cost[k]}S.tree[id]=1;rebuildTV();sfx.level();toast('Навык изучен: '+n.n,n.ic);buildMineInfo();checkAch();save();return true}
+$('tab-tree').addEventListener('click',e=>{const b=e.target.closest('[data-a="tnode"]');if(!b||b.disabled)return;ac();if(buyNode(b.dataset.id))buildTree()});
+
+/* ================= ЕЩЁ: изумруды, перекрутка, статистика ================= */
+const GEM_RATE=1500;
 function buildProg(){const st=S.stats;
-  const rows=[['Сломано блоков',fmt(st.blocks)],['Раундов сыграно',st.rounds],['Лучший раунд (блоков)',st.best],['Максимальное комбо',st.maxCombo],['Слитков выплавлено',fmt(st.ingots)],['Подорвано TNT',st.tnt],['Монет заработано',fmt(st.coinsEarned)],['Товаров продано',fmt(st.sold)]];
-  let h='<div class="card"><h3>Статистика</h3>'+rows.map(r=>`<div class="stat"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('')+'</div><div class="card"><h3>Достижения ('+ACH.filter(a=>S.ach[a.id]).length+'/'+ACH.length+')</h3>';
+  const rows=[['Сломано блоков',fmt(st.blocks)],['Раундов сыграно',st.rounds],['Лучший раунд (блоков)',st.best],['Максимальное комбо',st.maxCombo],['Слитков выплавлено',fmt(st.ingots)],['Предметов создано',st.crafted],['Сундуков открыто',st.chests],['Подорвано TNT',st.tnt],['Обезврежено бомб',st.defused],['Монет заработано',fmt(st.coinsEarned)],['Товаров продано',fmt(st.sold)]];
+  let h=`<div class="card"><h3>Изумруды</h3><div class="row" style="padding-top:0">${img('gem','ic')}<div class="tx"><b>У вас: ${fmt(S.gems)}</b><small>Изумруды нельзя добыть в шахте. Их дают покупки и перекрутка.</small></div></div>
+  <div class="btnrow mt" style="grid-template-columns:1fr 1fr"><button class="btn gold" data-a="gemcoin" data-n="1" ${S.gems>=1?'':'disabled'}>1 → ${fmt(GEM_RATE)} монет</button><button class="btn gold" data-a="gemcoin" data-n="10" ${S.gems>=10?'':'disabled'}>10 → ${fmt(GEM_RATE*10)} монет</button></div>
+  <div class="small dim mt">Купить изумруды${GR.testMode?' (тестовый режим: покупка бесплатна)':''}:</div>
+  <div class="btnrow mt">${GR.packs.map(p=>`<button class="btn em" data-a="pack" data-id="${p.id}">${p.gems}<br><small>${p.price}</small></button>`).join('')}</div></div>`;
+  h+='<div class="card"><h3>Изумрудная лавка</h3>'+GEMPERK.map(u=>{const l=gp(u.id),c=u.cost(l),pips=Array.from({length:u.max},(_,k)=>`<i class="${k<l?'on':''}"></i>`).join('');
+    return `<div class="row">${img(u.ic,'ic')}<div class="tx"><b>${u.n}</b><small>${u.ds(l)}</small><div class="pips">${pips}</div></div>${l>=u.max?'<span class="tag">МАКС</span>':`<button class="btn em" data-a="gperk" data-id="${u.id}" ${S.gems>=c?'':'disabled'}><img src="${ICON.gem}" alt="">${c}</button>`}</div>`}).join('')+'</div>';
+  h+=`<div class="card"><h3>Перекрутка</h3><div class="row" style="padding-top:0">${img('star','ic')}<div class="tx"><b>Звёзд: ${S.stars} (+${S.stars*10}% добычи) • перекруток: ${S.rebirths}</b><small>${S.won?'Игра пройдена! Перекрутка сбросит шахту, кирки, улучшения, навыки, локации и ресурсы. Достижения, статистика и изумруды остаются.':'Откроется после прохождения Энда (последней локации): '+Math.min(S.locProg.end||0,800)+'/800 блоков там.'}</small></div></div>
+  <div class="btnrow mt" style="grid-template-columns:1fr 1fr"><button class="btn purple" data-a="rebirth" data-kind="star" ${S.won?'':'disabled'}>★ Перекрут-монета</button><button class="btn em" data-a="rebirth" data-kind="gems" ${S.won?'':'disabled'}>10 изумрудов</button></div></div>`;
+  h+='<div class="card"><h3>Статистика</h3>'+rows.map(r=>`<div class="stat"><span>${r[0]}</span><b>${r[1]}</b></div>`).join('')+'</div><div class="card"><h3>Достижения ('+ACH.filter(a=>S.ach[a.id]).length+'/'+ACH.length+')</h3>';
   ACH.forEach(a=>{h+=`<div class="row ach ${S.ach[a.id]?'done':''}">${img('star','ic')}<div class="tx"><b>${a.n}</b><small>${a.d}</small></div><span class="tag">+${fmt(a.r)}</span></div>`});
   h+=`</div><div class="card"><h3>Настройки</h3><div class="btnrow" style="grid-template-columns:1fr 1fr"><button class="btn blue" data-a="snd">Звук: ${S.sound?'вкл':'выкл'}</button><button class="btn blue" data-a="exp">Экспорт</button><button class="btn blue" data-a="imp">Импорт</button><button class="btn red" data-a="reset">Сбросить игру</button></div><div id="savebox"></div></div>`;
   $('tab-prog').innerHTML=h}
+function rebirth(kind){if(!S.won){toast('Сначала пройдите Энд');return}
+  if(!confirm('Перекрутка: шахта, кирки, улучшения, навыки, локации и ресурсы сбросятся. Взамен: '+(kind==='gems'?'10 изумрудов':'одна перекрут-монета (★ +10% добычи навсегда)')+'. Продолжить?'))return;
+  const d=defaults();d.stats=S.stats;d.ach=S.ach;d.sound=S.sound;d.mk=S.mk;d.gems=S.gems+(kind==='gems'?10:0);d.gp=S.gp;d.stars=S.stars+(kind==='gems'?0:1);d.rebirths=S.rebirths+1;d.coins=100*d.stars;d.adCnt=S.adCnt;
+  noSave=true;try{localStorage.setItem(KEY,JSON.stringify(d))}catch(e){}location.reload()}
 function setSound(){$('sndBtn').textContent=S.sound?'♪ ВКЛ':'♪ ВЫКЛ'}
 $('sndBtn').onclick=()=>{S.sound=!S.sound;setSound();if(S.sound){ac();sfx.buy()}if(tab==='prog')buildProg();save()};
-$('tab-prog').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;ac();const a=b.dataset.a,box=$('savebox');
+$('tab-prog').addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b||b.disabled)return;ac();const a=b.dataset.a,box=$('savebox');
   if(a==='snd'){$('sndBtn').click()}
+  else if(a==='rebirth'){rebirth(b.dataset.kind)}
+  else if(a==='gemcoin'){const n=+b.dataset.n;if(S.gems<n)return;S.gems-=n;addCoins(n*GEM_RATE);sfx.coin();toast('Обмен: +'+fmt(n*GEM_RATE)+' монет','coin');buildProg()}
+  else if(a==='gperk'){const u=GEMPERK.find(x=>x.id===b.dataset.id),l=gp(u.id),c=u.cost(l);if(l>=u.max||S.gems<c)return;S.gems-=c;S.gp[u.id]=l+1;sfx.level();toast(u.n+': ур. '+(l+1),u.ic);buildProg();buildMineInfo();save()}
+  else if(a==='pack'){const p=GR.packs.find(x=>x.id===b.dataset.id);bridge().purchase(p.id,ok=>{if(!ok){toast('Покупки доступны в мобильной версии');return}S.gems+=p.gems;sfx.level();toast('+'+p.gems+' изумрудов','gem');save();if(tab==='prog')buildProg()})}
   else if(a==='exp'){save();let s='';try{s=btoa(unescape(encodeURIComponent(JSON.stringify(S))))}catch(x){}box.innerHTML='<textarea id="sv" readonly></textarea><div class="small dim">Скопируйте код и сохраните его.</div>';$('sv').value=s;$('sv').select()}
   else if(a==='imp'){box.innerHTML='<textarea id="sv" placeholder="Вставьте код сохранения"></textarea><button class="btn gold mt" data-a="doimp">Загрузить</button>'}
-  else if(a==='doimp'){try{const o=JSON.parse(decodeURIComponent(escape(atob($('sv').value.trim()))));if(typeof o.coins!=='number')throw 0;localStorage.setItem(KEY,JSON.stringify(o));location.reload()}catch(x){toast('Неверный код сохранения')}}
-  else if(a==='reset'){if(confirm('Удалить весь прогресс?')){try{localStorage.removeItem(KEY)}catch(x){}S=defaults();location.reload()}}});
+  else if(a==='doimp'){try{const o=JSON.parse(decodeURIComponent(escape(atob($('sv').value.trim()))));if(typeof o.coins!=='number')throw 0;localStorage.setItem(KEY,JSON.stringify(o));noSave=true;location.reload()}catch(x){toast('Неверный код сохранения')}}
+  else if(a==='reset'){if(confirm('Удалить весь прогресс?')){noSave=true;try{localStorage.removeItem(KEY)}catch(x){}location.reload()}}});
 
 /* ================= ВКЛАДКИ ================= */
-const TABS=[['mine','Шахта','pick2'],['furnace','Печь','furnace'],['market','Рынок','coin'],['shop','Лавка','villager'],['prog','Прогресс','star']];
+const TABS=[['mine','Шахта','pick2'],['furnace','Печь','furnace'],['market','Рынок','coin'],['shop','Лавка','villager'],['tree','Древо','torch'],['prog','Ещё','gem']];
 $('nav').innerHTML=TABS.map(([k,n,i])=>`<button data-t="${k}">${img(i)}<span>${n}</span></button>`).join('');
 function setTab(t){tab=t;TABS.forEach(([k])=>$('tab-'+k).classList.toggle('hidden',k!==t));document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.t===t));
-  if(t==='furnace')buildFurnace();else if(t==='market')buildMarket();else if(t==='shop')buildShop();else if(t==='prog')buildProg();else{buildMineInfo();gkey=''}
+  if(t==='furnace')buildFurnace();else if(t==='market')buildMarket();else if(t==='shop')buildShop();else if(t==='tree')buildTree();else if(t==='prog')buildProg();else{buildMineInfo();buildLocInfo();gkey=''}
   document.querySelector('main').scrollTop=0}
 $('nav').addEventListener('click',e=>{const b=e.target.closest('button');if(b){ac();setTab(b.dataset.t)}});
 
 /* ================= ЗАПУСК ================= */
-$('field').style.backgroundImage=`url("${ICON.grass}")`;
-(function deco(){let h='';for(let i=0;i<18;i++)h+=`<img src="${ICON['fl'+ri(0,3)]}" style="left:${rnd(2,94).toFixed(1)}%;top:${rnd(2,92).toFixed(1)}%" alt="">`;$('deco').innerHTML=h})();
 document.addEventListener('pointerdown',()=>ac(),{once:true});
-(function offline(){const dt=Math.min(Math.max(0,(Date.now()-S.last)/1000),8*3600);if(dt>30&&(S.cart>0||S.queue>0)){const o0=S.ore,i0=S.ingot;passive(dt);const dO=S.ore-o0,dI=S.ingot-i0;if(dO>0||dI>0)setTimeout(()=>toast('Пока вас не было: '+(dO>0?'+'+fmt(dO)+' руды ':'')+(dI>0?'+'+fmt(dI)+' слитков':''),'cart'),600)}lastWall=Date.now()})();
-setSound();showStart();setTab('mine');updateHeader();
-let lt=performance.now();
-function frame(t){const dt=Math.min(.08,(t-lt)/1000);lt=t;if(R&&tab==='mine')roundTick(dt);updateHUD();updateHeader();requestAnimationFrame(frame)}
+(function offline(){const dt=Math.min(Math.max(0,(Date.now()-S.last)/1000),8*3600);if(dt>30&&(S.cart>0||S.queue>0||S.qI>0||S.autoM>0)){const o0=S.ore,i0=S.ingot+S.ironIng;passive(dt);const dO=S.ore-o0,dI=S.ingot+S.ironIng-i0;
+  setTimeout(()=>{toast('Пока вас не было: '+(dO>0?'+'+fmt(dO)+' руды ':'')+(dI>0?'+'+fmt(dI)+' слитков':''),'cart');flushAuto(true)},600)}lastWall=Date.now()})();
+setSound();applyLoc();showStart();setTab('mine');updateHeader();
+let lt=performance.now(),hudAcc=0;
+function frame(t){const dt=Math.min(.08,(t-lt)/1000);lt=t;if(R&&tab==='mine')roundTick(dt);hudAcc+=dt;if(hudAcc>=.09){hudAcc=0;updateHUD()}updateHeader();requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
 setInterval(wallTick,250);setInterval(priceTick,6000);setInterval(save,4000);
 document.addEventListener('visibilitychange',()=>{if(document.hidden)save()});
 window.addEventListener('beforeunload',save);
+globalThis.__T={setTab,startRound,spawnBlock,roundTick,hitBlock,useAbility,priceTick,craft,passive,addXP,endRound,rebirth,travel,autoRun,merchTick,buyNode,rebuildTV,buildTree,buildShop,buildMarket,buildProg,buildFurnace,buildLocInfo,calcDrop,pickType,weights,expireBlock,get R(){return R},get S(){return S},useSel,LOCS,TREE};
 })();
 </script>
 </body>
